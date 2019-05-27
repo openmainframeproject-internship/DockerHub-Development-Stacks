@@ -38,8 +38,6 @@ zypper clean -a
 export TMPDIR=/var/tmp
 target=$(mktemp -d --tmpdir $(basename $0).XXXXXX)
 
-docker rmi centos7/centos7 centos:centos7
-
 mkdir -m 755 ${target}/dev
 mknod -m 600 ${target}/dev/console c 5 1
 mknod -m 600 ${target}/dev/initctl p
@@ -61,8 +59,8 @@ zypper -c ${zypp_config} --installroot=${target} --releasever=/ \
     --setopt=tsflags=nodocs \
     --setopt=group_package_types=mandatory -y install \
     centos-release \
-    ncurses-base filesystem nss-softokn-freebl glibc libstdc++ bash pcre zlib libdb bzip2-libs popt libacl libgpg-error lua audit-libs sqlite libcom_err nss-softokn libassuan sed libxml2 keyutils-libs glib2 pinentry cyrus-sasl-lib diffutils libidn gmp gdbm ustr dbus-libs p11-kit-trust libcap-ng libssh2 openssl-libs openssl-ibmca curl cracklib rpm-libs systemd-libs rpm nss-tools coreutils openldap nss-sysinit libutempter python-libs gnupg2 pygpgme rpm-python python-pycurl python-iniparse pyxattr vim-minimal libgcc tzdata setup basesystem glibc-common xz-libs ncurses-libs libsepol libselinux info nspr nss-util libattr libcap readline libffi elfutils-libelf chkconfig \
-     libuuid p11-kit libgcrypt grep file-libs pkgconfig shared-mime-info libdb-utils gawk cpio ncurses pth expat libsemanage libtasn1 ca-certificates libverto krb5-libs libcurl gzip cracklib-dicts libmount libpwquality libuser nss pam libblkid shadow-utils util-linux python gpgme rpm-build-libs yum-metadata-parser python-urlgrabber pyliblzma yum yum-plugin-ovl epel-release
+    ncurses-base filesystem glibc libstdc++ bash pcre zlib libdb bzip2-libs popt libacl libgpg-error lua audit-libs sqlite libcom_err nss-softokn libassuan sed libxml2 keyutils-libs glib2 pinentry cyrus-sasl-lib diffutils libidn gmp gdbm ustr dbus-libs p11-kit-trust libcap-ng libssh2 openssl-libs openssl-ibmca curl cracklib rpm-libs systemd-libs rpm nss-tools coreutils openldap nss-sysinit libutempter python-libs gnupg2 pygpgme rpm-python python-pycurl python-iniparse pyxattr vim-minimal libgcc tzdata setup basesystem glibc-common xz-libs ncurses-libs libsepol libselinux info nspr nss-util libattr libcap readline libffi elfutils-libelf chkconfig \
+     libuuid p11-kit libgcrypt grep file-libs pkgconfig shared-mime-info libdb-utils gawk cpio ncurses pth expat libsemanage libtasn1 ca-certificates libverto krb5-libs libcurl gzip cracklib-dicts libmount libpwquality libuser nss pam libblkid shadow-utils util-linux python gpgme rpm-build-libs yum-metadata-parser python-urlgrabber pyliblzma yum yum-plugin-ovl
 
 cp oss.repo ${target}/etc/zypp/repos.d/.
 
@@ -104,7 +102,7 @@ rm -rf ${target}/var/cache/ldconfig/*
 rm -rf ${target}/tmp/*
 
 if [ -z "${version}" ]; then
-	for file in ${target}/etc/{redhat,system,clefos,centos}-release
+	for file in ${target}/etc/{redhat,system,clefos,centos,sles}-release
 	do
 	    if [ -r "${file}" ]; then
 		version="$(sed 's/^[^0-9\]*\([0-9.]\+\).*$/\1/' ${file})"
@@ -118,4 +116,4 @@ if [ -z "${version}" ]; then
     version="${name}"
 fi
 tar -cJf sles-15-docker.tar.xz --numeric-owner -c -C ${target} .
-rm -rf ${target} 
+rm -rf ${target}
