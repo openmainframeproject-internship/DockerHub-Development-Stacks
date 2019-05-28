@@ -70,8 +70,6 @@ rm -f ${target}/etc/zypper/repos.d/sna.repo
 
 zypper -c ${zypp_config} --installroot=${target} clean all
 
-rpmkeys --import --root=${target} ${target}/etc/pki/rpm-gpg/RPM-GPG-KEY-SNA
-
 cat > ${target}/etc/sysconfig/network <<EOF
 NETWORKING=yes
 HOSTNAME=localhost.localdomain
