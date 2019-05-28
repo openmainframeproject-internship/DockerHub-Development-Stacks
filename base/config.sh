@@ -55,22 +55,20 @@ if [ -d /etc/zypp/vars ]; then
 	cp -a /etc/zypp/vars ${target}/etc/zypp/
 fi
 
-zypper -c ${zypp_config} --installroot=${target} --releasever=/ \
-    --non-interactive --no-gpg-checks install \
+zypper -c ${zypp_config} --root=${target} --releasever=/ \
+    --non-interactive --no-gpg-checks addrepo \
     SLE-Module-Basesystem15-Debuginfo-Pool SLE-Module-Basesystem15-Debuginfo-Updates SLE-Module-Basesystem15-Pool SLE-Module-Basesystem15-Source-Pool SLE-Module-Basesystem15-Updates SLE-Module-Containers15-Debuginfo-Pool SLE-Module-Containers15-Debuginfo-Updates SLE-Module-Containers15-Pool SLE-Module-Containers15-Source-Pool SLE-Module-Containers15-Updates SLE-Module-Desktop-Applications15-Debuginfo-Pool SLE-Module-Desktop-Applications15-Debuginfo-Updates SLE-Module-Desktop-Applications15-Pool \
     SLE-Module-Desktop-Applications15-Source-Pool SLE-Module-Desktop-Applications15-Updates SLE-Module-DevTools15-Debuginfo-Pool SLE-Module-DevTools15-Debuginfo-Updates SLE-Module-DevTools15-Pool SLE-Module-DevTools15-Source-Pool SLE-Module-DevTools15-Updates SLES15-15-0 SLE-Product-SLES15-Debuginfo-Pool SLE-Product-SLES15-Debuginfo-Updates SLE-Product-SLES15-Pool SLE-Product-SLES15-Source-Pool SLE-Product-SLES15-Updates SLE-Module-Packagehub-Subpackages15-Debuginfo-Pool SLE-Module-Packagehub-Subpackages15-Debuginfo-Updates \
     SLE-Module-Packagehub-Subpackages15-Pool SLE-Module-Packagehub-Subpackages15-Source-Pool SLE-Module-Packagehub-Subpackages15-Updates SUSE-PackageHub-15-Debuginfo SUSE-PackageHub-15-Pool SUSE-PackageHub-15-Standard-Pool SLE-Module-Server-Applications15-Debuginfo-Pool SLE-Module-Server-Applications15-Debuginfo-Updates SLE-Module-Server-Applications15-Pool SLE-Module-Server-Applications15-Source-Pool SLE-Module-Server-Applications15-Updates SLE-Module-Web-Scripting15-Debuginfo-Pool SLE-Module-Web-Scripting15-Debuginfo-Updates SLE-Module-Web-Scripting15-Pool SLE-Module-Web-Scripting15-Source-Pool SLE-Module-Web-Scripting15-Updates
 
-rm -f ${target}/etc/zypper/repos.d/sna.repo
-
-#zypper -c ${zypp_config} --installroot=${target} clean all
+zypper -c ${zypp_config} --installroot=${target} clean all
 
 cat > ${target}/etc/sysconfig/network <<EOF
 NETWORKING=yes
 HOSTNAME=localhost.localdomain
 EOF
 
-sed -i'' -e '/distroverpkg/s/$/\ntsflags=nodocs/' ${target}/etc/zypp/zypp.conf
+sed -i'' -e '/distroverpkg/s/$/' ${target}/etc/zypp/zypp.conf
 
 # effectively: febootstrap-minimize --keep-zoneinfo --keep-rpmdb
 # --keep-services ${target}.  Stolen from mkimage-rinse.sh
