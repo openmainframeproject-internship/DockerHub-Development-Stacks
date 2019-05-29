@@ -56,7 +56,7 @@ if [ -d /etc/zypp/vars ]; then
 fi
 
 zypper -c ${zypp_config} --installroot=${target} --releasever=/ \
-    --non-interactive --no-gpg-checks install libzypp
+    --non-interactive --no-gpg-checks install libzypp zypper
  #zypper -c ${zypp_config} --installroot=${target} clean all
 
 cp -ar /etc/zypp/repos.d ${target}/etc/zypp/repos.d
