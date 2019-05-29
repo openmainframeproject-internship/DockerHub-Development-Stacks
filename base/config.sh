@@ -59,7 +59,7 @@ zypper -c ${zypp_config} --installroot=${target} --releasever=/ \
     --non-interactive --no-gpg-checks install cracklib-dict-small filesystem libtirpc-netconfig perl-base libuuid libsmartcols libnettle libgcc_s libcap-ng libmagic1 libstdc++ libfdisk terminfo-base libreadline libverto libunistring libpopt libnpth liblzma libkeyutils libgmp libcap libaudit kubic-locale-archive libmodman cracklib libselinux libassuan libdw libboost_thread libpsl info pinentry findutils cpio libxml libhogweed libacl libmount libtasn libtirpc libtasn libgnutls sed libusb libnsl procps permissions libsolv-tools libgpgme libzypp sysuser-shadow libutempter aaa_base container-suseconnect p11-kit-tools suse-build-key ca-certificates boost-license system-user-root file-magic glibc libz libsqlite3 libsasl liblua libcom_err libopenssl libblkid libldap libncurses ncurses-utils bash libustr libsepol libpcre libnghttp liblz libgpg-error libffi libbz libattr fillup libboost_system libidn libksba libzio libproxy libcrack libsemanage libebl-plugins grep diffutils libelf libgcrypt libp11-kit libudev krb libsystemd libssh libcurl libaugeas coreutils libprocps sles-release rpm gpg pam shadow zypper system-group-hardware util-linux netcfg openssl p11-kit openssl ca-certificates-mozilla
  #zypper -c ${zypp_config} --installroot=${target} clean all
 
-cp -ar /etc/zypp/repos.d ${target}/etc/zypp/repos.d
+cp -ar /etc/zypp/repos.d ${target}/etc/zypp
 
 cat > ${target}/etc/sysconfig/network/conf <<EOF
 NETWORKING=yes
