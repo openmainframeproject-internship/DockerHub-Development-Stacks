@@ -61,12 +61,12 @@ zypper -c ${zypp_config} --installroot=${target} --releasever=/ \
 
 cp -ar /etc/zypp/repos.d ${target}/etc/zypp/repos.d
 
-cat > ${target}/etc/sysconfig/network <<EOF
+cat > ${target}/etc/sysconfig/network/conf <<EOF
 NETWORKING=yes
 HOSTNAME=localhost.localdomain
 EOF
 
-sed -i'' -e '/distroverpkg/s/$/\' ${target}/etc/zypp/zypp.conf
+sed -i'' -e '/distroverpkg/s/$/\ntsflags=nodocs/' ${target}/etc/zypp/zypp.conf
 
 # effectively: febootstrap-minimize --keep-zoneinfo --keep-rpmdb
 # --keep-services ${target}.  Stolen from mkimage-rinse.sh
