@@ -59,7 +59,7 @@ zypper -c ${zypp_config} --installroot=${target} --releasever=/ \
     --non-interactive --no-gpg-checks install libzypp
  #zypper -c ${zypp_config} --installroot=${target} clean all
 
-cp -ar etc/zypp/repos.d ${target}/etc/zypp/repos.d
+cp -ar /etc/zypp/repos.d ${target}/etc/zypp/repos.d
 
 cat > ${target}/etc/sysconfig/network <<EOF
 NETWORKING=yes
