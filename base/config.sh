@@ -145,7 +145,7 @@ zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Module-Web-Scripting/15/s390x/update?YBHTB5VZkS9rjhRvKeqUsU5CgroeLrc257OuwOqLsblqBZc1Dex_-qs_NMfIVqsjWQDg9XhzXOjcz0q5atHPvnbaEpy1lvOqEPVIsYntzqQ7WOJyl9L07ea24ot6f3oYjfKrGRKjTmWRcst30hNhg-qK57Y Web_and_Scripting_Module_15_s390x:SLE-Module-Web-Scripting15-Updates
 
 zypper -c ${zypp_config} --root=${target} --releasever=/ \
-    --non-interactive --auto-agree-with-licenses --no-gpg-checks install libzypp zypper filesystem sles-release-15 
+    --non-interactive  --no-gpg-checks install --auto-agree-with-licenses libzypp zypper filesystem sles-release-15 
  #zypper -c ${zypp_config} --installroot=${target} clean all
 
 
