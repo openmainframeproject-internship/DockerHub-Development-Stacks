@@ -8,7 +8,6 @@ RUN zypper -n install git
 RUN zypper -n install openssh
 RUN zypper -n install gcc
 RUN zypper -n install make
-RUN zypper -n install nodejs6
 RUN zypper -n install npm
 RUN sed -i -e 's/uidSupport = process.getuid && process.setuid/uidSupport = false/g' /usr/lib64/node_modules/npm10/node_modules/uid-number/uid-number.js
 RUN npm install --quiet -g gulp bower yo mocha karma-cli pm2 && npm cache clean
