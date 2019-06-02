@@ -1,17 +1,16 @@
-FROM registry.suse.com/suse/sle15
+FROM vedarth/sles
 
 EXPOSE 80 443 3000 35729 8080
 
 ENV NODE_ENV development
 
-RUN zypper -n install curl
 RUN zypper -n install git
 RUN zypper -n install openssh
 RUN zypper -n install gcc
 RUN zypper -n install make
-
 RUN zypper -n install nodejs6
 RUN zypper -n install npm
+RUN sed -i -e 's/uidSupport = process.getuid && process.setuid/uidSupport = false/g' /usr/lib64/node_modules/npm10/node_modules/uid-number/uid-number.js
 RUN npm install --quiet -g gulp bower yo mocha karma-cli pm2 && npm cache clean
 RUN mkdir -p /opt/mean.js/public/lib
 WORKDIR /opt/mean.js
