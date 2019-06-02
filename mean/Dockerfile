@@ -5,10 +5,9 @@ EXPOSE 80 443 3000 35729 8080
 WORKDIR		/home/mean
 
 # Install gem sass for  grunt-contrib-sass
-RUN 		zypper install -y "*v8*5.2.258-11*" mongodb-enterprise \
-				mongodb-enterprise-server mongodb-enterprise-tools mongodb-enterprise-shell \
+RUN 		zypper install -y mongodb-org \
 				ruby ruby-devel perl-Digest-SHA git \
-				make gcc gcc-c++ krb5-devel phantomjs && \
+				make gcc gcc-c++ krb5-devel && \
 		npm config set registry http://registry.npmjs.org/ && \
 		gem install sass && \
 		npm install -g grunt-cli && \
