@@ -55,11 +55,12 @@ if [ -d /etc/zypp/vars ]; then
 	cp -a /etc/zypp/vars ${target}/etc/zypp/
 fi
 
-zypper -c ${zypp_config} --installroot=${target} --releasever=/ \
-    --non-interactive --no-gpg-checks install libzypp zypper
+zypper -c ${zypp_config} --root=${target} --releasever=/ \
+    --non-interactive --no-gpg-checks install libzypp zypper filesystem sles-release-15 
  #zypper -c ${zypp_config} --installroot=${target} clean all
 
-cp -r /etc/zypp/repos.d ${target}/etc/zypp
+zypper -c ${zypp_config} --root=${target} --releasever=/ \
+    --non-interactive --no-gpgcheck addrepo http://aussie-2.lf-dev.marist.edu/SLES15 SLES15-15-0
 
 cat > ${target}/etc/sysconfig/network/conf <<EOF
 NETWORKING=yes
