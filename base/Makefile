@@ -3,17 +3,17 @@ VERSION=$(shell cat VERSION)
 all:	base
 
 base:	sles-15-docker.tar.xz Dockerfile
-	docker build --rm --tag sles/sles --label VERSION=$(VERSION) . 
+	docker build --rm --tag vedarth/sles15-s390x --label VERSION=$(VERSION) . 
 
-sles-15-docker.tar.xz:	createBase.sh
-	./createBase.sh
+sles-15-docker.tar.xz:	config.sh
+	./config.sh
 
 push:
 	docker tag sles/sles:latest sles/sles:sles15
 	docker tag sles/sles:latest sles/sles:$(VERSION)
-	docker tag sles/sles:latest sles:sles7
+	docker tag sles/sles:latest sles:sles15
 	docker push sles/sles:latest
-	docker push sles/sles:sles7
+	docker push sles/sles:sles15
 	docker push sles/sles:$(VERSION)
 
 clean:
