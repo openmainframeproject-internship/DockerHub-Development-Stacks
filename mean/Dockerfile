@@ -4,8 +4,6 @@ EXPOSE 80 443 3000 35729 8080
 
 WORKDIR		/home/mean
 
-COPY		mongo.repo /etc/yum.repos.d/
-
 # Install gem sass for  grunt-contrib-sass
 RUN 		zypper install -y "*v8*5.2.258-11*" mongodb-enterprise \
 				mongodb-enterprise-server mongodb-enterprise-tools mongodb-enterprise-shell \
