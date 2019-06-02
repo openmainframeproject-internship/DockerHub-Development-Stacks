@@ -10,7 +10,7 @@ RUN zypper -n install gcc
 RUN zypper -n install make
 RUN zypper -n install npm
 RUN sed -i -e 's/uidSupport = process.getuid && process.setuid/uidSupport = false/g' /usr/lib64/node_modules/npm10/node_modules/uid-number/uid-number.js
-RUN npm install --quiet -g gulp bower yo mocha karma-cli pm2 && npm cache clean
+RUN npm install --quiet -g gulp bower yo mocha karma-cli pm2
 RUN mkdir -p /opt/mean.js/public/lib
 WORKDIR /opt/mean.js
 RUN git clone https://github.com/meanjs/mean.git
