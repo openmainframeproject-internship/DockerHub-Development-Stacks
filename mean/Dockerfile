@@ -4,9 +4,7 @@ EXPOSE 80 443 3000 35729 8080
 
 WORKDIR		/home/mean
 
-RUN rpm --import https://www.mongodb.org/static/pgp/server-4.0.asc
-
-RUN zypper addrepo --gpgcheck "https://repo.mongodb.org/zypper/suse/12/mongodb-org/4.0/x86_64/" mongodb
+RUN zypper addrepo -G --check --refresh "https://repo.mongodb.org/zypper/suse/12/mongodb-org/4.0/x86_64/" mongodb
 
 # Install gem sass for  grunt-contrib-sass
 RUN 		zypper install -y mongodb-org \
