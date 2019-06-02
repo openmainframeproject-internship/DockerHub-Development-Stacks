@@ -4,7 +4,7 @@ EXPOSE 80 443 3000 35729 8080
 
 WORKDIR		/home/mean
 
-RUN zypper addrepo -G --check --refresh "https://repo.mongodb.org/zypper/suse/12/mongodb-org/4.0/x86_64/" mongodb
+RUN zypper addrepo -G --check --refresh "https://repo.mongodb.org/zypper/suse/12/mongodb-org/4.0/s390x/" mongodb
 
 # Install gem sass for  grunt-contrib-sass
 RUN 		zypper install -y mongodb-org \
