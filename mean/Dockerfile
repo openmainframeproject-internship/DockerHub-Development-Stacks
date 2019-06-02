@@ -8,6 +8,7 @@ RUN zypper addrepo -G --check --refresh "https://repo.mongodb.org/zypper/suse/12
 
 # Install gem sass for  grunt-contrib-sass
 RUN 		zypper install -y mongodb-org-server mongodb-org-mongos mongodb-org-shell \
+                libcryptopp-devel libcryptopp5_6_5 \
 				ruby ruby-devel git \
 				make gcc gcc-c++ krb5-devel && \
 		npm config set registry http://registry.npmjs.org/ && \
