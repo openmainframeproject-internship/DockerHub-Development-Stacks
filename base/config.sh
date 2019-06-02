@@ -56,7 +56,7 @@ if [ -d /etc/zypp/vars ]; then
 fi
 
 zypper -c ${zypp_config} --root=${target} \
-    -G --check --refresh addrepo https://updates.suse.com/SUSE/Products/SLE-Module-Basesystem/15/s390x/product_debug?LOK75mM2xow1_nP7c-EFx3gp11e5SShy3KCsBseI2IZeOMLYgB5NJPVlp9Dc5h-8qZbAMSSZQCPjGyXZgapalW7yz851xP_2lrgKie59lCmc4EcxPeuYJ-N68uJlBh7qpKiDT-DLe1O1Lau7EtCFUd47IQOpZ_2NoQ Basesystem_Module_15_s390x:SLE-Module-Basesystem15-Debuginfo-Pool
+    addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Basesystem/15/s390x/product_debug?LOK75mM2xow1_nP7c-EFx3gp11e5SShy3KCsBseI2IZeOMLYgB5NJPVlp9Dc5h-8qZbAMSSZQCPjGyXZgapalW7yz851xP_2lrgKie59lCmc4EcxPeuYJ-N68uJlBh7qpKiDT-DLe1O1Lau7EtCFUd47IQOpZ_2NoQ Basesystem_Module_15_s390x:SLE-Module-Basesystem15-Debuginfo-Pool
 
 zypper -c ${zypp_config} --root=${target} --releasever=/ \
     --non-interactive --no-gpg-checks install libzypp zypper filesystem sles-release-15 
