@@ -1,6 +1,6 @@
 FROM vedarth/sles
 
-RUN zypper install -y go git
+RUN zypper install -y go1.10 git
 
 COPY 		go-wrapper /usr/local/bin/
 
