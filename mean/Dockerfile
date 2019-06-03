@@ -4,11 +4,11 @@ EXPOSE 80 443 3000 35729 8080
 
 WORKDIR		/home/mean
 
-RUN zypper addrepo -G --check --refresh "https://repo.mongodb.org/zypper/suse/12/mongodb-org/4.0/s390x/" mongodb
+RUN zypper addrepo -G --check --refresh "https://repo.mongodb.com/zypper/suse/12/mongodb-enterprise/4.0/s390x/" mongodb
 
 # Install gem sass for  grunt-contrib-sass
 RUN 		   zypper install -y libopenssl-1_1-devel libopenssl-devel libopenssl1_1 libopenssl1_1-hmac libcryptopp-devel libcryptopp5_6_5
-RUN            zypper install -y    mongodb-org-server mongodb-org-mongos mongodb-org-shell \
+RUN            zypper install -y    mongodb-enterprise \
                 libcryptopp-devel libcryptopp5_6_5 \
 				ruby ruby-devel git \
 				make gcc gcc-c++ krb5-devel && \
