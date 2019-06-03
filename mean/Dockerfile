@@ -7,7 +7,7 @@ WORKDIR		/home/mean
 RUN zypper addrepo -G --check --refresh "https://repo.mongodb.org/zypper/suse/12/mongodb-org/4.0/s390x/" mongodb
 
 # Install gem sass for  grunt-contrib-sass
-RUN 		zypper install -y libopenssl-1_1 \
+RUN 		zypper install -y libopenssl1_1 \
                 mongodb-org-server mongodb-org-mongos mongodb-org-shell \
                 libcryptopp-devel libcryptopp5_6_5 \
 				ruby ruby-devel git \
