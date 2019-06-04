@@ -1,6 +1,6 @@
 VERSION=$(shell cat VERSION)
 
-all:		django
+all:		redis
 
 redis:		Dockerfile
 		docker build --rm --tag vedarth/redis --label VERSION=$(VERSION) .
