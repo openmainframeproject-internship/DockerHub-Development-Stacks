@@ -20,22 +20,22 @@ printf "Creating wp-config.php...\n"
 # there isn't now.
 sed -e "s/database_name_here/$DB_ENV_MYSQL_DATABASE/
 s/username_here/$DB_ENV_MYSQL_USER/
-s/password_here/$DB_ENV_MYSQL_PASSWORD/" /var/www/html/wp-config-sample.php > /var/www/html/wp-config.php
+s/password_here/$DB_ENV_MYSQL_PASSWORD/" /srv/www/html/wp-config-sample.php > /srv/www/html/wp-config.php
 RE='put your unique phrase here'
 for i in {1..8}; do
   KEY=$(openssl rand -base64 40)
-  sed -i "0,/$RE/s|$RE|$KEY|" /var/www/html/wp-config.php
+  sed -i "0,/$RE/s|$RE|$KEY|" /srv/www/html/wp-config.php
 done
 }
 
 __handle_db_host() {
 # Update wp-config.php to point to our linked container's address.
 sed -i -e "s/^\(define('DB_HOST', '\).*\(');.*\)/\1${DB_PORT#tcp://}\2/" \
-  /var/www/html/wp-config.php
+  /srv/www/html/wp-config.php
 }
 
 __httpd_perms() {
-chown apache:apache /var/www/html/wp-config.php
+chown apache:apache /srv/www/html/wp-config.php
 }
 
 __run_apache() {
@@ -43,7 +43,7 @@ exec /scripts/run-apache.sh
 }
 
 __check() {
-if [ ! -f /var/www/html/wp-config.php ]; then
+if [ ! -f /srv/www/html/wp-config.php ]; then
   __handle_passwords
   __httpd_perms
 fi
