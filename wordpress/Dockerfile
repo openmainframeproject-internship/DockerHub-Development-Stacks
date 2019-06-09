@@ -1,6 +1,6 @@
 FROM vedarth/sles
 
-RUN zypper install -y httpd php php7 \
+RUN zypper install -y httpd php php7 tar \
     php7-mysql php7-gd openssl psmisc curl
 
 RUN 	curl -LO http://wordpress.org/latest.tar.gz                         &&	\
