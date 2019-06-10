@@ -1,6 +1,6 @@
 FROM vedarth/sles
 
-RUN zypper install -y sudo && \
+RUN zypper install -y sudo \
     postgresql postgresql-server postgresql-contrib
 
 ADD 		./postgresql-setup /usr/bin/postgresql-setup
