@@ -3,7 +3,10 @@ FROM vedarth/sles
 RUN zypper install -y sudo \
     postgresql postgresql-server postgresql-contrib
 
+RUN pip install supervisor
+
 ADD 		./postgresql-setup /usr/bin/postgresql-setup
+ADD 		./supervisord.conf /etc/supervisord.conf
 ADD 		./start_postgres.sh /start_postgres.sh
 
 RUN		sed -i 's/.*requiretty$/#Defaults requiretty/' /etc/sudoers && \
@@ -21,4 +24,3 @@ VOLUME		["/var/lib/pgsql"]
 EXPOSE 		5432
 
 CMD 		["/bin/bash", "/start_postgres.sh"]
-
