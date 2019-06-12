@@ -1,6 +1,7 @@
 FROM vedarth/sles
 
-RUN zypper install -y npm
+RUN zypper update -y && \
+    zypper install -y npm
 
 EXPOSE 3000
 

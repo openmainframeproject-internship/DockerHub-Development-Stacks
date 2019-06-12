@@ -1,6 +1,7 @@
 FROM vedarth/sles
 
-RUN zypper install -y sudo \
+RUN zypper update -y && \
+	zypper install -y sudo \
     postgresql postgresql-server postgresql-contrib
 
 RUN pip install supervisor

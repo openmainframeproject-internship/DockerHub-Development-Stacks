@@ -1,6 +1,7 @@
 FROM vedarth/sles
 
-RUN zypper install -y httpd php php7 tar gzip \
+RUN zypper update -y && \
+	zypper install -y httpd php php7 tar gzip \
     php7-mysql php7-gd openssl psmisc curl
 
 RUN mkdir /srv/www/html && \
