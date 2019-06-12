@@ -5,9 +5,9 @@ RUN zypper update -y && \
 
 COPY 		fix-permissions.sh ./
 
-RUN 		./fix-permissions.sh /var/lib/mysql/   && \
-    		./fix-permissions.sh /var/log/mariadb/ && \
-    		./fix-permissions.sh /var/run/
+RUN 		./fix-permissions.sh /usr/bin/mysql/   && \
+    		./fix-permissions.sh /usr/bin/mariadb/ && \
+    		./fix-permissions.sh /usr/bin/
 
 COPY 		docker-entrypoint.sh /
 
