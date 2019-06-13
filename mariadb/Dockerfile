@@ -5,10 +5,6 @@ RUN zypper update -y && \
 
 COPY 		fix-permissions.sh ./
 
-RUN 		./fix-permissions.sh /var/lib/mysql-files/   && \
-    		./fix-permissions.sh /var/log/mysql/ && \
-    		./fix-permissions.sh /var/run/
-
 COPY 		docker-entrypoint.sh /
 
 COPY		allow-skip-name.cnf /etc/my.cnf.d/
