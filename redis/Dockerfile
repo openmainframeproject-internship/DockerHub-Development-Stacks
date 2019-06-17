@@ -1,6 +1,7 @@
 FROM vedarth/sles
 
-RUN zypper install -y redis
+RUN zypper update -y && \
+    zypper install -y redis
 
 EXPOSE      6379
 
