@@ -5,6 +5,7 @@ node {
         checkout scm
     }
     stage('Build image') {
+        sh 'docker ps'
         sh 'cd django && docker build .'
     }
     stage('Test image') {
