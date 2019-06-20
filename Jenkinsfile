@@ -5,7 +5,7 @@ node {
         checkout scm
     }
     stage('Build image') {
-        sh 'cd django && make django'
+        docker.build("vedarth/django")
     }
     stage('Test image') {
         app.inside {
