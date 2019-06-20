@@ -6,7 +6,7 @@ node {
     }
     stage('Build image') {
         sh 'cd django'
-        app = docker.build("vedarth/django")
+        sh 'make django'
     }
     stage('Test image') {
         app.inside {
