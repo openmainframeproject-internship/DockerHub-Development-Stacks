@@ -3,11 +3,10 @@ node {
 
     stage('Clone repository') {
         checkout scm
+        sh 'yum install docker'
     }
     stage('Build image') {
-        
-        sh 'cd django'
-        docker.build("vedarth/django")
+        sh 'cd django && docker build .'
     }
     stage('Test image') {
         app.inside {
