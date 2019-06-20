@@ -5,8 +5,7 @@ node {
         checkout scm
     }
     stage('Build image') {
-        sh 'cd django'
-        sh 'make django'
+        sh 'cd django && make django'
     }
     stage('Test image') {
         app.inside {
