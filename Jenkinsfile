@@ -14,7 +14,7 @@ node {
 
     stage('Push image') {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-            app.push("latest")
+            sh "docker push vedarth/django:latest"
         }
     }
 }
