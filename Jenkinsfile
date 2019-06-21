@@ -9,7 +9,7 @@ node {
     stage('Build image') {
         DOCKER_HOME = tool "docker"
 
-        sh "cd django && docker build ."
+        sh "cd django && docker build vedarth/django"
     }
 
     stage('Push image') {
