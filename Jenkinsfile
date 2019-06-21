@@ -15,13 +15,9 @@ node {
         $DOCKER_HOME/bin/docker images
         $DOCKER_HOME/bin/docker ps -a
     """
-        docker.build("vedarth/django")
+        sh "cd django && docker build ."
     }
-    stage('Test image') {
-        app.inside {
-            sh 'echo "Test Passed"'
-        }
-    }
+
     stage('Push image') {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
             app.push("${env.BUILD_NUMBER}")
