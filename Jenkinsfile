@@ -1,7 +1,13 @@
 node {
     def app
 
-    DOCKER_HOME = tool "docker"
+    
+
+    stage('Clone repository') {
+        checkout scm
+    }
+    stage('Build image') {
+        DOCKER_HOME = tool "docker"
 
     sh """
         echo $DOCKER_HOME
@@ -9,11 +15,6 @@ node {
         $DOCKER_HOME/bin/docker images
         $DOCKER_HOME/bin/docker ps -a
     """
-
-    stage('Clone repository') {
-        checkout scm
-    }
-    stage('Build image') {
         docker.build("vedarth/django")
     }
     stage('Test image') {
