@@ -9,12 +9,12 @@ node {
     stage('Build image') {
         DOCKER_HOME = tool "docker"
 
-        docker.build("vedarth/django")
+        app = docker.build("vedarth/django")
     }
 
     stage('Push image') {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-            sh "docker push vedarth/django:latest"
+            app.push("latest")
         }
     }
 }
