@@ -8,7 +8,7 @@ node {
     }
     stage('Build image') {
         DOCKER_HOME = tool "docker"
-
+        sh "cd django"
         app = docker.build("vedarth/django")
     }
 
