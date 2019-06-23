@@ -1,4 +1,4 @@
-node {
+node('suse') {
     def app
     def app2
     def app3
