@@ -13,7 +13,7 @@ node {
         sh "mv redis/Dockerfile ."
         app2 = docker.build("vedarth/redis")
         sh "mv Dockerfile redis/"
-        sh "./base/config.sh"
+        sh "cd base && ./config.sh && cd .."
         sh "mv base/Dockerfile ."
         sh "mv base/sles-15-docker.tar.xz ."
         app3 = docker.build("vedarth/sles")
