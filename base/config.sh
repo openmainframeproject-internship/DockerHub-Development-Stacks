@@ -79,7 +79,7 @@ sudo zypper -c ${zypp_config} --root=${target} \
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Desktop-Applications/15/s390x/product_debug?-gPPuXfs6Nhf1U53vsnUULSz-nkmgXNwa8-5yB2FD6xU_eZJ89tUXUe6PJLdJk6myPI_pA9gSoGl4fj_t2vFRIXaq9D47QZGJkRKP8VAQAT3lDUory_EHp2B0MmCxTcqVtkfTFLL_s5r1iCHbFetKnosUjOwauai6jvcjS7fpyIkHsg Desktop_Applications_Module_15_s390x:SLE-Module-Desktop-Applications15-Debuginfo-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
-    addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Module-Desktop-Applications/15/s390x/update_debug?vqqMFJyji8GeTSUanv2Zs1mxcnUXl-kpDDu7Q0_Mil-N-ohtrES2OdySXQEMMwyl6fZaG6KUoM23ni_yK74jNnWCqE_zwFtsJZXLjN0omUXJ-yAj0mAxrc61GyDvebw6L5JUAOVqf6lWP_9mdQuOkoD9GGACFWcZ_eVsXdJ7aRmD Desktop_Applications_Module_15_s390x:SLE-Module-Desktop-Applications15-Debuginfo-Updates
+    addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Module-Desktop-Applications/15/s390x/update_debug?vqqMFJyji8GeTSUanv2Zs1mxcnUXl-kpDDu7Q0_Mil-N-ohtrES2OdySXQEMMwyl6fZaG6KUoM23ni_yK74jNnWCqE_zwFtsJZXLjN0omUXJ-yAj0mAxrc61GyDvebw6L5JUAOVqf6lWP_9mdQuOkoD9GGACFWcZ_eVsXdJ7asudo RmD Desktop_Applications_Module_15_s390x:SLE-Module-Desktop-Applications15-Debuginfo-Updates
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Desktop-Applications/15/s390x/product?lMOvyqAsfMHfwBsaypBlce2vH15ZIniYkjJh0NZBIEJ7qQR-cGqGVf2LMdYTHlYycY2XdGAX95UpQwLOnF0cvY8G7yFH-qS9_3LLTIsispzrUkfEqXjSfA-sulY8zCPE96ZdflRcLuPSEozhtSqxcZevR0zQlaCOqCesSjU Desktop_Applications_Module_15_s390x:SLE-Module-Desktop-Applications15-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
@@ -95,13 +95,13 @@ sudo zypper -c ${zypp_config} --root=${target} \
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Development-Tools/15/s390x/product_source?_5SLTjuxUSGb470YR0HHzCWyQ-CLbi_dvqCIifodQ1TBkl5lO10GfC7lLm6REvFRUTJuyTX_5V01-Y6bsc2AVt1Ylkha07JyH9hfL2LohFm0gCguLD0AgkCWLa9s0byIaxlPUvSVCNWBNT-uJ5fGW1vhHXAMBlMWEQ9oVEHDUum7 Development_Tools_Module_15_s390x:SLE-Module-DevTools15-Source-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
-    addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Module-Development-Tools/15/s390x/update?OSpqFK2uUnLUpCfRHRTjRndlqVNQX47joE3Dm9SE2tpeBShbG65yfgpdmMrmmM9P6_I5Ggaau7Be-afIu0aYsIYtfGi-ug9bQf8S19mCdjEQZqajYPRnSlfHFVG382t4iXSsHkwuC8z5sKaP-gdgZLR5qAN7aR4f Development_Tools_Module_15_s390x:SLE-Module-DevTools15-Updates
+    addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Module-Development-Tools/15/s390x/update?OSpqFK2uUnLUpCfRHRTjRndlqVNQX47joE3Dm9SE2tpeBShbG65yfgpdmMsudo rmmM9P6_I5Ggaau7Be-afIu0aYsIYtfGi-ug9bQf8S19mCdjEQZqajYPRnSlfHFVG382t4iXSsHkwuC8z5sKaP-gdgZLR5qAN7aR4f Development_Tools_Module_15_s390x:SLE-Module-DevTools15-Updates
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh http://aussie-2.lf-dev.marist.edu/SLES15 SLES15-15-0
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Product-SLES/15/s390x/product_debug?FNLuvlFSbqHwlxkwyBwJ0iNXp-8VBsw0TpwdiayReS7T31_2HaMuubJD4i1ZJ1lbfaVEpHiuqFnwnB4zlQCoZn3RFfRcsbrQXBRu6hwxJCP2sNH06-8h-XjAztmX-KIV2pwQ2tpEiMY0XSQqv0XbdxzGe6U SUSE_Linux_Enterprise_Server_15_s390x:SLE-Product-SLES15-Debuginfo-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
-    addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Product-SLES/15/s390x/update_debug?pO_cUgmkLNRMS-8sep5_P_QfootRnbePWItHgRGr6Q2B5960rwUwcmgmsmCFDBCNF4VYaDCX5aSTw7Hs91hmltUHYoqLClZagQV81TiT0GzKzbUEaI8ozolOll3TKGmnHL-KvdSMhtMYDWOA4RqKkG7I SUSE_Linux_Enterprise_Server_15_s390x:SLE-Product-SLES15-Debuginfo-Updates
+    addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Product-SLES/15/s390x/update_debug?pO_cUgmkLNsudo RMS-8sep5_P_QfootRnbePWItHgRGr6Q2B5960rwUwcmgmsmCFDBCNF4VYaDCX5aSTw7Hs91hmltUHYoqLClZagQV81TiT0GzKzbUEaI8ozolOll3TKGmnHL-KvdSMhtMYDWOA4RqKkG7I SUSE_Linux_Enterprise_Server_15_s390x:SLE-Product-SLES15-Debuginfo-Updates
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Product-SLES/15/s390x/product?6cBNeN8wScJktFSaS6PGPh5eovvyFpy6iSC6vDGs4-lt2YXmJ4GjGwM4Uex2V9wKJAI6TiiYQejgPgmuwJNhm7oaR08bjTxskuYF4Y9V53NysPs4A67RwrNpSwzE2pY8WEVjcAIi8mVK_sm_tfg SUSE_Linux_Enterprise_Server_15_s390x:SLE-Product-SLES15-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
@@ -113,15 +113,15 @@ sudo zypper -c ${zypp_config} --root=${target} \
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Module-Packagehub-Subpackages/15/s390x/update_debug?pxoX59O3IhWqteEtHv2CzZHzxQD0ZHpXZ5JP0uQbYtBk2cf1LF-cJ9yIaUaN2e8dAo8XORCz21OB9M-eLaS9VRd7qFxV2s0qV5_ETP7EpnwVKrJJJ82kzlgfzKo5eIlkDqC3bLVMTi0cx9X_Y2UY9rACxvYztV-g2m8LazlI892mdXY SUSE_Package_Hub_15_s390x:SLE-Module-Packagehub-Subpackages15-Debuginfo-Updates
 sudo zypper -c ${zypp_config} --root=${target} \
-    addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Packagehub-Subpackages/15/s390x/product?4CsMOIyfWFoTUCL2VRG3P4zRTgFr2lqEqF7GJgdtH--810vvRl9RMhuKYKcB_ZQdK2VFGD3V6Q4MFOtlCaeMlgvk_UFgrS6yUS8MkMvbtLIH5-yg7mzkJkxlqaR6NJz8kbPm869nn_eRET0E_99Vxepm_hvOOkuu37kBnFk_EA SUSE_Package_Hub_15_s390x:SLE-Module-Packagehub-Subpackages15-Pool
+    addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Packagehub-Subpackages/15/s390x/product?4CsMOIyfWFoTUCL2VRG3P4zRTgFr2lqEqF7GJgdtH--810vvRl9sudo RMhuKYKcB_ZQdK2VFGD3V6Q4MFOtlCaeMlgvk_UFgrS6yUS8MkMvbtLIH5-yg7mzkJkxlqaR6NJz8kbPm869nn_eRET0E_99Vxepm_hvOOkuu37kBnFk_EA SUSE_Package_Hub_15_s390x:SLE-Module-Packagehub-Subpackages15-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Packagehub-Subpackages/15/s390x/product_source?ust3X3s-C-Td6F3WGAcrgGXOQbpvIPHIRZhzlnQher_xiRxi-I_FmEfIQNNJxPZvqjHdZER758cbcKE73MIVxxuAzzn4RFI3TWZlxNYWke6mjhKay8WlcUE_H0qSARcYxnTwC4nuq1Ebfc36DFM-GDKGHCfq_uxY-PXZt3i05F73_lKj9Js SUSE_Package_Hub_15_s390x:SLE-Module-Packagehub-Subpackages15-Source-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
-    addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Module-Packagehub-Subpackages/15/s390x/update?E7wWy3QVa8f2r4ARM7M_7YIYmVgfe7zBhenT1z2cugOQGK1mqZ92PZmeCkY7YnQ_BGImzuKgdUihaKw4IHuxBrPUE-qhPM3qAgpCMN63FGmglMrj4MGxZ9kAKeTknIPzGHzfE9awh_nqnpZ7vT7ii7wX0UhYfLTgBjxHIIo SUSE_Package_Hub_15_s390x:SLE-Module-Packagehub-Subpackages15-Updates
+    addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Module-Packagehub-Subpackages/15/s390x/update?E7wWy3QVa8f2r4Asudo RM7M_7YIYmVgfe7zBhenT1z2cugOQGK1mqZ92PZmeCkY7YnQ_BGImzuKgdUihaKw4IHuxBrPUE-qhPM3qAgpCMN63FGmglMrj4MGxZ9kAKeTknIPzGHzfE9awh_nqnpZ7vT7ii7wX0UhYfLTgBjxHIIo SUSE_Package_Hub_15_s390x:SLE-Module-Packagehub-Subpackages15-Updates
 sudo zypper -c ${zypp_config} --root=${target} \
-    addrepo -G --check --refresh https://updates.suse.com/SUSE/Backports/SLE-15_s390x/standard_debug?GxXBSDPWjYW9OlmpA2FdOEQbBDzAGqOyBPkTFjRB-4KMRmCX__Fz_SiH4Q6o5zK5MR_M37IvHmBKktvfD3VuRoFWciX3PI_wCJDL7MuXPl4YwnVd_T_ZscdTpinA6UPSUg8jvsdvh64J SUSE_Package_Hub_15_s390x:SUSE-PackageHub-15-Debuginfo
+    addrepo -G --check --refresh https://updates.suse.com/SUSE/Backports/SLE-15_s390x/standard_debug?GxXBSDPWjYW9OlmpA2FdOEQbBDzAGqOyBPkTFjRB-4KMsudo RmCX__Fz_SiH4Q6o5zK5MR_M37IvHmBKktvfD3VuRoFWciX3PI_wCJDL7MuXPl4YwnVd_T_ZscdTpinA6UPSUg8jvsdvh64J SUSE_Package_Hub_15_s390x:SUSE-PackageHub-15-Debuginfo
 sudo zypper -c ${zypp_config} --root=${target} \
-    addrepo -G --check --refresh https://updates.suse.com/SUSE/Backports/SLE-15_s390x/product?9vmnVrDcs3-7Pr9eW36aYNEEBrTZL9At7vKiPLcYIWGnIajrW-Pp0KDXMw095CddplkGbmRdMJUiJDbfiTzTmMI5QFKw3_KRMt5JPaUAVJt5yA3_RThNF6yeR6BKiwmVtbM SUSE_Package_Hub_15_s390x:SUSE-PackageHub-15-Pool
+    addrepo -G --check --refresh https://updates.suse.com/SUSE/Backports/SLE-15_s390x/product?9vmnVrDcs3-7Pr9eW36aYNEEBrTZL9At7vKiPLcYIWGnIajrW-Pp0KDXMw095CddplkGbmRdMJUiJDbfiTzTmMI5QFKw3_Ksudo RMt5JPaUAVJt5yA3_RThNF6yeR6BKiwmVtbM SUSE_Package_Hub_15_s390x:SUSE-PackageHub-15-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Backports/SLE-15_s390x/standard?r5JmwKlaUg5lq7nnvHO9bFjkGyvB6e76a4SmjBZr9qhmlSIT2SPrenPeFRaGx1ECVT1zBIXZyPCrU9_DsTmZY7aPEKwkQPPK8IhPiTAA5iRNWhiv5gm9R2B2lAFXEACDATCN SUSE_Package_Hub_15_s390x:SUSE-PackageHub-15-Standard-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
@@ -139,7 +139,7 @@ sudo zypper -c ${zypp_config} --root=${target} \
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Updates/SLE-Module-Web-Scripting/15/s390x/update_debug?dO4mwtts1P5E0jo6yGhwjLa9y7vH6V_ThLrKyd6dmoB2NTkfOOF7w0O_h9w6LqiE9MbZzQFSyo4QCwh2eH_LYLH-9bqCKUA0gbDAc2Dp66S2b_dxSQ2jl2hS9Tc3G2QCHWzGmnWU6q-TQJu9h5nOvtN2rlHOQPS4fbw Web_and_Scripting_Module_15_s390x:SLE-Module-Web-Scripting15-Debuginfo-Updates
 sudo zypper -c ${zypp_config} --root=${target} \
-    addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Web-Scripting/15/s390x/product?9f3PJDV-YLE2NfOOtu-F7SA0iJ_Xsmbh17N2hsJViH980PVcaA7RGxbxUyuzE2CorW6P-XRjF806OI_vVKsLypgnijZSo2ehJPBZ39FR3fiRWunfDFgyagyFN14CeAwBJL85Yaaybi0cF91G8prMCRufYQF_Bw Web_and_Scripting_Module_15_s390x:SLE-Module-Web-Scripting15-Pool
+    addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Web-Scripting/15/s390x/product?9f3PJDV-YLE2NfOOtu-F7SA0iJ_Xsmbh17N2hsJViH980PVcaA7RGxbxUyuzE2CorW6P-XRjF806OI_vVKsLypgnijZSo2ehJPBZ39FR3fiRWunfDFgyagyFN14CeAwBJL85Yaaybi0cF91G8psudo rMCRufYQF_Bw Web_and_Scripting_Module_15_s390x:SLE-Module-Web-Scripting15-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
     addrepo -G --check --refresh https://updates.suse.com/SUSE/Products/SLE-Module-Web-Scripting/15/s390x/product_source?WEwfT1EmYW0zZGsBTYchJ9oOetWWp1aMyTK3-PWWsYN2kb1uZ9Rngd6YhHP1Vrzp2SqhoJ6VJqot--h9X3p-WmtZ7WZ58XOvIDXH5sFAf3EWz9FT2CU6iKH_GOftFRk03v3VYy06ayekWeR__TDVwWd-e_xxnLUin1b4-g0 Web_and_Scripting_Module_15_s390x:SLE-Module-Web-Scripting15-Source-Pool
 sudo zypper -c ${zypp_config} --root=${target} \
@@ -151,7 +151,7 @@ sudo zypper -c ${zypp_config} --root=${target} --releasever=/ \
 
 
 
-cat > ${target}/etc/sysconfig/network/conf <<EOF
+sudo cat > ${target}/etc/sysconfig/network/conf <<EOF
 NETWORKING=yes
 HOSTNAME=localhost.localdomain
 EOF
@@ -161,20 +161,20 @@ sed -i'' -e '/distroverpkg/s/$/\ntsflags=nodocs/' ${target}/etc/zypp/zypp.conf
 # effectively: febootstrap-minimize --keep-zoneinfo --keep-rpmdb
 # --keep-services ${target}.  Stolen from mkimage-rinse.sh
 #  locales
-rm -rf ${target}/usr/{{lib,share}/locale,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive}
+sudo rm -rf ${target}/usr/{{lib,share}/locale,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive}
 #  docs
-rm -rf ${target}/usr/share/{man,doc,info,gnome/help}
+sudo rm -rf ${target}/usr/share/{man,doc,info,gnome/help}
 #  cracklib
-rm -rf ${target}/usr/share/cracklib
+sudo rm -rf ${target}/usr/share/cracklib
 #  i18n
-rm -rf ${target}/usr/share/i18n
+sudo rm -rf ${target}/usr/share/i18n
 #  sln
-rm -rf ${target}/sbin/sln
+sudo rm -rf ${target}/sbin/sln
 #  ldconfig
-rm -rf ${target}/etc/ld.so.cache
-rm -rf ${target}/var/cache/ldconfig/*
+sudo rm -rf ${target}/etc/ld.so.cache
+sudo rm -rf ${target}/var/cache/ldconfig/*
 # tmp
-rm -rf ${target}/tmp/*
+sudo rm -rf ${target}/tmp/*
 
 if [ -z "${version}" ]; then
 	for file in ${target}/etc/{redhat,system,clefos,centos,sles}-release
@@ -190,5 +190,5 @@ if [ -z "${version}" ]; then
     echo >&2 "warning: cannot autodetect OS version, using '${name}' as tag"
     version="${name}"
 fi
-tar -cJf sles-15-docker.tar.xz --numeric-owner -c -C ${target} .
-rm -rf ${target}
+sudo tar -cJf sles-15-docker.tar.xz --numeric-owner -c -C ${target} .
+sudo rm -rf ${target}
