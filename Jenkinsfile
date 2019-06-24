@@ -6,9 +6,10 @@ node('suse') {
         checkout scm
     }
     stage('Build image') {
-        sh "cd base && ./config.sh && cd .."
+        sh "cd base && sudo ./config.sh && cd .."
         sh "mv base/Dockerfile ."
         sh "mv base/sles-15-docker.tar.xz ."
+        app3 = docker.build("vedarth/sles")
         sh "mv Dockerfile base/"
         sh "mv sles-15-docker.tar.xz base/"
         sh "mv django/Dockerfile ."
@@ -19,12 +20,5 @@ node('suse') {
         app2 = docker.build("vedarth/redis")
         sh "mv Dockerfile redis/"
         
-    }
-
-    stage('Push image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-            app.push("latest")
-            app2.push("latest")
-        }
     }
 }
