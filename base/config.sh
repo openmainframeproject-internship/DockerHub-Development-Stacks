@@ -1,4 +1,5 @@
 usage() {
+    set -x
     cat <<EOOPTS
 $(basename $0) [OPTIONS] 
 OPTIONS:
