@@ -4,6 +4,12 @@ node('suse') {
     def app3
     def app4
     def app5
+    def app6
+    def app7
+    def app8
+    def app9
+    def app10
+    def app11
     stage('Clone repository') {
         checkout scm
     }
@@ -29,5 +35,36 @@ node('suse') {
         sh "mv jupyter/Dockerfile ."
         app5 = docker.build("vedarth/jupyter")
         sh "mv Dockerfile jupyter/"
+        sh "mv mariadb/allow-skip-name.cnf ."
+        sh "mv mariadb/docker-entrypoint.sh ."
+        sh "mv mariadb/Dockerfile ."
+        sh "mv mariadb/fix-permissions.sh ."
+        app6 = docker.build("vedarth/mariadb")
+        sh "mv allow-skip-name.cnf mariadb/"
+        sh "mv docker-entrypoint.sh mariadb/"
+        sh "mv Dockerfile mariadb/"
+        sh "mv fix-permissions.sh mariadb/"
+        sh "mv nginx/Dockerfile ."
+        app7 = docker.build("vedarth/nginx")
+        sh "mv Dockerfile nginx/"
+        sh "mv nodejs/Dockerfile ."
+        app8 = docker.build("vedarth/nodejs")
+        sh "mv Dockerfile nodejs/"
+        sh "mv postgresql/Dockerfile ."
+        sh "mv postgresql/postgresql-setup ."
+        sh "mv postgresql/postgresql.conf ."
+        sh "mv postgresql/start_postgres.sh ."
+        sh "mv postgresql/supervisord.conf ."
+        app9 = docker.build("vedarth/postgresql")
+        sh "mv Dockerfile postgresql/"
+        sh "mv postgresql-setup postgresql/"
+        sh "mv postgresql.conf postgresql/"
+        sh "mv start_postgres.sh postgresql/"
+        sh "mv supervisord.conf postgresql/"
+        sh "mv wordpress/scripts ."
+        sh "mv wordpress/Dockerfile ."
+        app10 = docker.build("vedarth/wordpress")
+        sh "mv Dockerfile wordpress/"
+        sh "mv scripts wordpress/"
     }
 }
