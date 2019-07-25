@@ -21,7 +21,7 @@ RUN 		yum install -y --setopt=tsflags=nodocs unzip wget && \
 		rm -rf /var/cache/yum/* /tmp/* /var/log/yum.log
 
 # Install WebSphere Liberty
-ENV 		LIBERTY_VERSION 2017.9.0_0
+ARG 		LIBERTY_VERSION
 
 RUN 		LIBERTY_URL=$(wget -q -O - https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/index.yml  | grep $LIBERTY_VERSION -A 3 | sed -n 's/\s*webProfile7:\s//p' | tr -d '\r') && \
 		echo $LIBERTY_URL && \

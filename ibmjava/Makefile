@@ -40,7 +40,7 @@ push:
 	docker push docker.io/clefos/ibmjava:jre
 	docker tag docker.io/clefos/ibmjava:8-sdk docker.io/clefos/ibmjava:sdk
 	docker tag docker.io/clefos/ibmjava:8-sdk
-	docker tag docker.io/clefos/ibmjava:8-sdk docker.io/clefos/ibmjava:latest
+	docker tag docker.io/clefos/ibmjava:11-sdk docker.io/clefos/ibmjava:latest
 	docker push docker.io/clefos/ibmjava:8-sdk
 	docker push docker.io/clefos/ibmjava:sdk
 	docker push docker.io/clefos/ibmjava:latest
