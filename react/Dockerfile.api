@@ -1,6 +1,6 @@
 FROM	clefos/node:10
 
-RUN cp volume/react-api.tar.gz .
+ADD	volume/react-api.tar.gz .
 
 WORKDIR api
 

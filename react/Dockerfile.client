@@ -1,6 +1,6 @@
 FROM	clefos/node:10
 
-RUN cp volume/react-client.tar.gz .
+ADD	volume/react-client.tar.gz .
 
 WORKDIR client
 
