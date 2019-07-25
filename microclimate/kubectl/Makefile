@@ -2,7 +2,7 @@ VERSION=$(shell cat VERSION)
 
 all:	kubectl
 
-kubectl: Dockerfile kubernetes.repo
+kubectl:
 	@docker build --rm --tag clefos/kubectl:latest . 
 
 push:
