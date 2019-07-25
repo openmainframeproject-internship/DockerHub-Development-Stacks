@@ -8,6 +8,8 @@ react:	volume/react-api.tar.gz volume/react-client.tar.gz
 
 volume/react-api.tar.gz volume/react-client.tar.gz: Dockerfile.api Dockerfile.client VERSION
 	@docker run --rm -it -v $(PWD)/volume:/volume --privileged clefos/node:10 ls -l /volume
+	./volume/build-react.sh
+	./volume/reactClient.sh
 
 push:
 	@docker tag clefos/react-api:latest clefos/react-api:clefos7
