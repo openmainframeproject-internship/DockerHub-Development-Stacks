@@ -3,7 +3,7 @@ THIS=$(shell pwd)
 
 all:	minikube
 
-minikube: Dockerfile go/src/k8s.io/minikube/out/minikube-linux-s390x
+minikube: Dockerfile 
 	@docker build --rm --tag clefos/minikube:latest . 
 
 go/src/k8s.io/minikube/out/minikube-linux-s390x:
