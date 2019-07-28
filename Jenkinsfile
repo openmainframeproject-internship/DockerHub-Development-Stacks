@@ -78,6 +78,12 @@ node {
     def app78
     def app79
     def app80
+    def app81
+    def app82
+    def app83
+    def app84
+    def app85
+    def app86
     stage('Clone Repository') {
         checkout scm
     }
@@ -418,7 +424,7 @@ node {
         // sh "cd wordpress-sa ; make all"
         app80 = docker.image("clefos/wordpress-sa")
         // sh "docker rmi clefos/wordpress-sa"
-        sh "cd websphere ; make all"
+        sh "cd websphere ; make"
         app81 = docker.image("clefos/websphere-liberty:kernel")
         app82 = docker.image("clefos/websphere-liberty:microProfile")
         app83 = docker.image("clefos/websphere-liberty:webProfile6")
