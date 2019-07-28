@@ -17,9 +17,9 @@ tag=`echo $image | cut -d ":" -f2`
 test=test
 cname=$tag$test
 
-if [ $# != 2 ]
+if [ $# != 3 ]
 then
-   if [ $# != 1 ]
+   if [ $# != 2 ]
    then
       echo "Usage : build.sh <Image name> <Dockerfile location>"
       exit 1
