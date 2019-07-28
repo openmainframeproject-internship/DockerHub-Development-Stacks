@@ -10,6 +10,7 @@
 
 image=$1
 dloc=$2
+version=$3
 
 tag=`echo $image | cut -d ":" -f2`
 
@@ -32,7 +33,7 @@ echo "**************************************************************************
 echo "           Starting docker build for $image                                   "
 echo "******************************************************************************"
 
-docker build --no-cache=true -t $image $dloc  > build_$tag.log
+docker build --build-arg LIBERTY_VERSION=$3 --no-cache=true -t $image $dloc  > build_$tag.log
 
 if [ $? = 0 ]
 then

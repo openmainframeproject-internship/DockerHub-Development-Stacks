@@ -1,6 +1,6 @@
 #!/bin/sh
 original_path=$(pwd)
-declare -a blacklist=(base/ microclimate/ origin/ AMHub_Files/)
+declare -a blacklist=(base/ origin/ AMHub_Files/)
 
 containsElement () {
   local e match="$1"

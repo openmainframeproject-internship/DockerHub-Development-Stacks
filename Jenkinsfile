@@ -418,6 +418,13 @@ node {
         // sh "cd wordpress-sa ; make all"
         app80 = docker.image("clefos/wordpress-sa")
         // sh "docker rmi clefos/wordpress-sa"
+        sh "cd websphere ; make all"
+        app81 = docker.image("clefos/websphere-liberty:kernel")
+        app82 = docker.image("clefos/websphere-liberty:microProfile")
+        app83 = docker.image("clefos/websphere-liberty:webProfile6")
+        app84 = docker.image("clefos/websphere-liberty:webProfile7")
+        app85 = docker.image("clefos/websphere-liberty:javaee7")
+        app86 = docker.image("clefos/websphere-liberty:beta")
 
     }
 
