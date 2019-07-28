@@ -14,7 +14,7 @@ docker pull clefos/java
 
 while read -r imageName buildContextDirectory
 do
-  if [$imageName == $beta]
+  if [ $imageName == $beta ]
   then
     version=$(sed '22q;d' /tmp/index.yml | cut -d':' -f 1)
     ./build.sh $imageName $buildContextDirectory $version && ./verify.sh $imageName
