@@ -15,11 +15,11 @@ while read -r imageName buildContextDirectory
 do
   if [ $imageName == 'clefos/websphere-liberty:beta' ]
   then
-    version=$(sed '22q;d' /tmp/index.yml | cut -d':' -f 1)
+    version=$(tail -n 5 /tmp/index.yml | cut -d':' -f 1 | cut -d' ' -f 1 | tr -d '\n')
     echo $version
     ./build.sh $imageName $buildContextDirectory $version && ./verify.sh $imageName
   else
-    version=$(tail -n 5 /tmp/index.yml | cut -d':' -f 1 | cut -d' ' -f 1 | tr -d '\n')
+    version=$(sed '22q;d' /tmp/index.yml | cut -d':' -f 1)
     echo $version
     ./build.sh $imageName $buildContextDirectory $version && ./verify.sh $imageName
   fi
