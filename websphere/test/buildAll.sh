@@ -14,7 +14,7 @@ docker pull clefos/java
 
 while read -r imageName buildContextDirectory
 do
-  if [$imageName == 'clefos/websphere-liberty:beta']
+  if [$imageName == echo 'clefos/websphere-liberty:beta']
   then
     version=$(sed '22q;d' /tmp/index.yml | cut -d':' -f 1)
     ./build.sh $imageName $buildContextDirectory $version && ./verify.sh $imageName
