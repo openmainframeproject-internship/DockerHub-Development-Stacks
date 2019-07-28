@@ -22,7 +22,7 @@ RUN		yum upgrade -y --setopt=tsflags=nodocs && \
 		rm -rf /var/cache/yum/* /tmp/* /var/log/yum.log
 
 # Install WebSphere Liberty
-ENV 		LIBERTY_VERSION 17.0.0_02
+ARG 		LIBERTY_VERSION
 ARG 		LIBERTY_URL
 ARG 		DOWNLOAD_OPTIONS=""
 
