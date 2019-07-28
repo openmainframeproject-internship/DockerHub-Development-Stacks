@@ -311,7 +311,7 @@ node {
         app38 = docker.image("clefos/memcached")
         // sh "mv Dockerfile memcached/"
         // sh "docker rmi clefos/memcached"
-        sh "cd microclimate ; make all"
+        // sh "cd microclimate ; make all"
         app39 = docker.image("clefos/bats")
         app40 = docker.image("clefos/curl")
         app41 = docker.image("clefos/helm")
