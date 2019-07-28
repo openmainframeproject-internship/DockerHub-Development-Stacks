@@ -9,12 +9,12 @@
 #                                                                                   #
 #####################################################################################
 $(wget -q -U jenkins -O /tmp/index.yml https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/index.yml)
-
+beta='clefos/websphere-liberty:beta'
 docker pull clefos/java
 
 while read -r imageName buildContextDirectory
 do
-  if [$imageName == echo 'clefos/websphere-liberty:beta']
+  if [$imageName == $beta]
   then
     version=$(sed '22q;d' /tmp/index.yml | cut -d':' -f 1)
     ./build.sh $imageName $buildContextDirectory $version && ./verify.sh $imageName
