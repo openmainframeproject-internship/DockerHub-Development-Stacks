@@ -33,7 +33,7 @@ echo "**************************************************************************
 echo "           Starting docker build for $image                                   "
 echo "******************************************************************************"
 
-docker build --build-arg LIBERTY_VERSION=$3 --no-cache=true -t $image $dloc  > build_$tag.log
+docker build --build-arg LIBERTY_VERSION=$version --no-cache=true -t $image $dloc  > build_$tag.log
 
 if [ $? = 0 ]
 then

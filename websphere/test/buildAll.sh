@@ -18,7 +18,6 @@ do
   then
     version=$(sed '22q;d' /tmp/index.yml | cut -d':' -f 1)
     ./build.sh $imageName $buildContextDirectory $version && ./verify.sh $imageName
-    
   else
     version=$(tail -n 5 /tmp/index.yml | cut -d':' -f 1 | cut -d' ' -f 1 | tr -d '\n')
     ./build.sh $imageName $buildContextDirectory $version && ./verify.sh $imageName
