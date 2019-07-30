@@ -1,4 +1,5 @@
 #!/bin/sh
+cd clefos
 original_path=$(pwd)
 declare -a blacklist=(base/ origin/ AMHub_Files/)
 
@@ -14,6 +15,6 @@ do
     if [ $(containsElement $x "${blacklist[@]}" ; echo $?) == 1 ]
     then
         echo $x
-        cd clefos/$x ; make clean ; cd $original_path
+        cd $x ; make clean ; cd $original_path
     fi
 done
