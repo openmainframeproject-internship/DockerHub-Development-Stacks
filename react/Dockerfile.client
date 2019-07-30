@@ -1,0 +1,11 @@
+FROM	clefos/node:10
+
+ADD	volume/react-client.tar.gz .
+
+WORKDIR client
+
+ADD	volume/reactClient.sh .
+
+EXPOSE 	3000
+
+CMD 	["sh", "reactClient.sh" ]

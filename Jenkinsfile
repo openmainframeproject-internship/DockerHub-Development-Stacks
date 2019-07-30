@@ -1,0 +1,437 @@
+node {
+    stage('Clone Repository') {
+        checkout scm
+    }
+
+    stage('Build image') {
+        DOCKER_HOME = tool "docker"
+        sh "./buildall.sh"
+        def app1 = docker.image("clefos/ade")
+        // sh "docker rmi clefos/ade"
+        // sh "mv ansible/Dockerfile ."
+        def app2 = docker.image("clefos/ansible")
+        // sh "mv Dockerfile ansible/"
+        // sh "docker rmi clefos/ansible"
+        // sh "mv bacula/docker-compose.yml ."
+        // sh "mv bacula/bacula-db/Dockerfile ."
+        def app3 = docker.image("clefos/bacula-db")
+        // sh "mv Dockerfile bacula/bacula-db/"
+        // sh "docker rmi clefos/bacula-db"
+        // sh "mv bacula/bacula-db-data/Dockerfile ."
+        def app4 = docker.image("clefos/bacula-db-data")
+        // sh "mv Dockerfile bacula/bacula-db-data/"
+        // sh "docker rmi clefos/bacula-db-data"
+        // sh "mv bacula/bacula-dir/Dockerfile ."
+        // sh "cp -r bacula/bacula-dir/configs ."
+        // sh "cp -r bacula/bacula-dir/scripts ."
+        def app5 = docker.image("clefos/bacula-dir")
+        // sh "mv Dockerfile bacula/bacula-dir/"
+        // sh "rm -R configs"
+        // sh "rm -R scripts"
+        // sh "docker rmi clefos/bacula-dir"
+        // sh "mv bacula/bacula-fd/Dockerfile ."
+        // sh "cp -r bacula/bacula-fd/configs ."
+        // sh "cp -r bacula/bacula-fd/scripts ."
+        def app6 = docker.image("clefos/bacula-fd")
+        // sh "mv Dockerfile bacula/bacula-fd/"
+        // sh "rm -R configs"
+        // sh "rm -R scripts"
+        // sh "docker rmi clefos/bacula-fd"
+        // sh "mv bacula/bacula-sd/Dockerfile ."
+        // sh "cp -r bacula/bacula-sd/configs ."
+        // sh "cp -r bacula/bacula-sd/scripts ."
+        def app7 = docker.image("clefos/bacula-sd")
+        // sh "mv Dockerfile bacula/bacula-sd/"
+        // sh "rm -R configs"
+        // sh "rm -R scripts"
+        // sh "mv docker-compose.yml bacula/"
+        // sh "docker rmi clefos/bacula-sd"
+        // sh "cp -r bind/container-image-root ."
+        // sh "mv bind/Dockerfile ."
+        def app8 = docker.image("clefos/bind")
+        // sh "rm -R container-image-root"
+        // sh "mv Dockerfile bind/"
+        // sh "docker rmi clefos/bind"
+        // sh "./busybox/build.sh"
+        // sh "mv busybox/glibc/Dockerfile ."
+        // sh "mv busybox/glibc/busybox.tar.xz ."
+        def app9 = docker.image("clefos/glibc-test")
+        // sh "mv Dockerfile busybox/glibc/"
+        // sh "mv busybox.tar.xz busybox/glibc/"
+        // sh "docker rmi clefos/glibc-test"
+        // sh "mv cobol/Dockerfile ."
+        def app10 = docker.image("clefos/cobol")
+        // sh "mv Dockerfile cobol/"
+        // sh "docker rmi clefos/cobol"
+        // sh "cp -r compose-ui/files ."
+        // sh "mv compose-ui/Dockerfile ."
+        def app11 = docker.image("clefos/compose-ui")
+        // sh "rm -R files"
+        // sh "mv Dockerfile compose-ui/"
+        // sh "docker rmi clefos/compose-ui"
+        // sh "mv couchdb/install.sh ."
+        // sh "mv couchdb/Dockerfile ."
+        def app12 = docker.image("clefos/couchdb")
+        // sh "mv install.sh couchdb/"
+        // sh "mv Dockerfile couchdb/"
+        // sh "docker rmi clefos/couchdb"
+        // sh "mv django/Dockerfile ."
+        def app13 = docker.image("clefos/django")
+        // sh "mv Dockerfile django/"
+        // sh "docker rmi clefos/django"
+        // sh "cp -r docker-swarm-visualizer/files ."
+        // sh "mv docker-swarm-visualizer/package.json ."
+        // sh "mv docker-swarm-visualizer/Dockerfile ."
+        def app14 = docker.image("clefos/visualizer")
+        // sh "rm -R files"
+        // sh "mv package.json docker-swarm-visualizer/"
+        // sh "mv Dockerfile docker-swarm-visualizer/"
+        // sh "docker rmi clefos/visualizer"
+        // sh "mv earthquake/Dockerfile ."
+        def app15 = docker.image("clefos/earthquake")
+        // sh "mv Dockerfile earthquake/"
+        // sh "docker rmi clefos/earthquake"
+        // sh "mv erlang/Dockerfile ."
+        def app16 = docker.image("clefos/erlang")
+        // sh "mv Dockerfile erlang/"
+        // sh "docker rmi clefos/erlang"
+        // sh "mv etcd/Dockerfile ."
+        // sh "mv etcd/etcd-s390x.patch ."
+        def app17 = docker.image("clefos/etcd")
+        // sh "mv Dockerfile etcd/"
+        // sh "mv etcd-s390x.patch etcd/"
+        // sh "docker rmi clefos/etcd"
+        // sh "mv fluentd/Dockerfile ."
+        def app18 = docker.image("clefos/fluentd")
+        // sh "mv Dockerfile fluentd/"
+        // sh "docker rmi clefos/fluentd"
+        // sh "mv golang/Dockerfile ."
+        // sh "mv golang/go-wrdef apper ."
+        def app19 = docker.image("clefos/golang")
+        // sh "mv Dockerfile golang/"
+        // sh "mv go-wrdef apper golang/"
+        // sh "docker rmi clefos/golang"
+        // sh "cd grafana ; make all"
+        def app20 = docker.image("clefos/grafana")
+        // sh "docker rmi grafana"
+        // sh "cp -r hadoop-openshift/bin ."
+        // sh "cp -r hadoop-openshift/etc ."
+        // sh "mv hadoop-openshift/Dockerfile ."
+        // sh "mv hadoop-openshift/hadoop-cluster-template.json ."
+        // sh "wget https://archive.apache.org/dist/hadoop/core/hadoop-2.8.1/hadoop-2.8.1.tar.gz"
+        def app21 = docker.image("clefos/hadoop");
+        // sh "rm -R bin"
+        // sh "rm -R etc"
+        // sh "rm hadoop-2.8.1.tar.gz"
+        // sh "mv Dockerfile hadoop-openshift/"
+        // sh "mv hadoop-cluster-template.json hadoop-openshift/"
+        // sh "docker rmi clefos/hadoop"
+        // sh "mv hello-nodejs/Dockerfile ."
+        // sh "mv hello-nodejs/index.js ."
+        // sh "mv hello-nodejs/package.json ."
+        def app22 = docker.image("clefos/hello-nodejs")
+        // sh "mv Dockerfile hello-nodejs/"
+        // sh "mv index.js hello-nodejs/"
+        // sh "mv package.json hello-nodejs/"
+        // sh "docker rmi clefos/hello-nodejs"
+        // sh "mv httpd/Dockerfile ."
+        // sh "mv httpd/run-httpd.sh ."
+        def app23 = docker.image("clefos/httpd");
+        // sh "mv Dockerfile httpd/"
+        // sh "mv run-httpd.sh httpd/"
+        // sh "docker rmi clefos/httpd"
+        // sh "cd ibmjava ; make all"
+        def app24 = docker.image("docker.io/clefos/ibmjava:8")
+        def app25 = docker.image("docker.io/clefos/ibmjava:8-sdk")
+        def app26 = docker.image("docker.io/clefos/ibmjava:11-sdk")
+        def app27 = docker.image("docker.io/clefos/maven:8")
+        def app28 = docker.image("docker.io/clefos/maven:11")
+        def app29 = docker.image("docker.io/clefos/ibmjava:8-sfj")
+        // sh "docker rmi docker.io/clefos/ibmjava:8"
+        // sh "docker rmi docker.io/clefos/ibmjava:8-sdk"
+        // sh "docker rmi docker.io/clefos/maven:8"
+        // sh "docker rmi docker.io/clefos/maven:11"
+        // sh "docker rmi docker.io/clefos/ibmjava:11-sdk"
+        // sh "docker rmi docker.io/clefos/ibmjava:8-sfj"
+        // sh "mv ibmjava/8/sdk/Dockerfile ."
+        // sh "mv Dockerfile ibmjava/8/sdk/"
+        // sh "docker rmi clefos/ibmjava:8-sdk"
+        // sh "mv ibmjava/8/sfj/Dockerfile ."
+        // sh "mv Dockerfile ibmjava/8/sfj/"
+        // sh "docker rmi clefos/ibmjava:8-sfj"
+        // sh "mv ibmjava/11/sdk/Dockerfile ."
+        // sh "mv Dockerfile ibmjava/11/sdk/"
+        // sh "docker rmi clefos/ibmjava:11-sdk"
+        // sh "mv ibmjava/8/maven/Dockerfile ."
+        // sh "mv Dockerfile ibmjava/8/maven/"
+        // sh "docker rmi clefos/maven:8"
+        // sh "mv ibmjava/11/maven/Dockerfile ."
+        // sh "mv Dockerfile ibmjava/11/maven/"
+        // sh "docker rmi clefos/maven:11"
+        // sh "cd jboss ; git clone https://github.com/jboss-dockerfiles/wildfly.git ; cd .."
+        // sh "cd jboss/wildfly ; git checkout 11.0.0.Final -b s390x ; cd .."
+        // sh "mv jboss/wildfly/Dockerfile ."
+        def app30 = docker.image("clefos/jboss-wildfly")
+        // sh "mv Dockerfile jboss/wildfly/"
+        // sh "docker rmi clefos/jboss-wildfly"
+        // sh "mv jupyter/Dockerfile ."
+        def app31 = docker.image("clefos/jupyter")
+        // sh "mv Dockerfile jupyter/"
+        // sh "docker rmi clefos/jupyter"
+        // sh "mv kubernetes/Dockerfile ."
+        // sh "mv kubernetes/kubernetes.sh ."
+        def app32 = docker.image("clefos/kubernetes")
+        // sh "mv kubernetes.sh kubernetes/"
+        // sh "mv Dockerfile kubernetes/"
+        // sh "docker rmi clefos/kubernetes"
+        // sh "mv lighttpd/Dockerfile ."
+        // sh "cp -r lighttpd/cfg_files ."
+        def app33 = docker.image("clefos/lighttpd")
+        // sh "rm -R cfg_files"
+        // sh "mv Dockerfile lighttpd/"
+        // sh "docker rmi clefos/lighttpd"
+        // sh "mv mariadb/Dockerfile ."
+        // sh "mv mariadb/allow-skip-name.cnf ."
+        // sh "mv mariadb/docker-entrypoint.sh ."
+        // sh "mv mariadb/fix-permissions.sh ."
+        def app34 = docker.image("clefos/mariadb")
+        // sh "mv Dockerfile mariadb/"
+        // sh "mv allow-skip-name.cnf mariadb/"
+        // sh "mv docker-entrypoint.sh mariadb/"
+        // sh "mv fix-permissions.sh mariadb/"
+        // sh "docker rmi clefos/mariadb"
+        // sh "mv MEAN/Dockerfile ."
+        // sh "mv MEAN/mongo.repo ."
+        def app35 = docker.image("clefos/mean")
+        // sh "mv Dockerfile MEAN/"
+        // sh "mv mongo.repo MEAN/"
+        // sh "docker rmi clefos/mean"
+        // sh "cd meanjs ; make all"
+        def app36 = docker.image("clefos/meanjs") 
+        // sh "docker rmi clefos/meanjs"
+        // sh "mv mediawiki/Dockerfile ."
+        // sh "mv mediawiki/fpm-pool-www.conf ."
+        // sh "mv mediawiki/fpm.conf ."
+        // sh "mv mediawiki/mediawiki-start ."
+        // sh "mv mediawiki/nginx.conf ."
+        // sh "mv mediawiki/supervisord.conf ."
+        def app37 = docker.image("clefos/mediawiki")
+        // sh "mv Dockerfile mediawiki/"
+        // sh "mv fpm-pool-www.conf mediawiki/"
+        // sh "mv fpm.conf mediawiki/"
+        // sh "mv mediawiki-start mediawiki/"
+        // sh "mv nginx.conf mediawiki/"
+        // sh "mv supervisord.conf mediawiki/"
+        // sh "docker rmi clefos/mediawiki"
+        // sh "mv memcached/Dockerfile ."
+        def app38 = docker.image("clefos/memcached")
+        // sh "mv Dockerfile memcached/"
+        // sh "docker rmi clefos/memcached"
+        // sh "cd microclimate ; make all"
+        def app39 = docker.image("clefos/bats")
+        def app40 = docker.image("clefos/curl")
+        def app41 = docker.image("clefos/helm")
+        def app42 = docker.image("clefos/jenkins")
+        def app43 = docker.image("clefos/jnlp-slave")
+        def app44 = docker.image("clefos/kubectl")
+        def app45 = docker.image("clefos/minikube")
+        // sh "cd mongodb ; make all"
+        def app46 = docker.image("clefos/mongodb")
+        // sh "cd mono ; make all"
+        def app47 = docker.image("clefos/mono")
+        // sh "docker rmi clefos/mongodb"
+        // sh "docker rmi clefos/mono"
+        // sh "cd nginx ; make all"
+        def app48 = docker.image("clefos/nginx")
+        // sh "docker rmi clefos/nginx"
+        // sh "cd nodejs ; make all"
+        def app49 = docker.image("clefos/node:8")
+        def app50 = docker.image("clefos/node:10")
+        def app51 = docker.image("clefos/node:12")
+        // sh "docker rmi clefos/node:8"
+        // sh "docker rmi clefos/node:10"
+        // sh "docker rmi clefos/node:12"
+        // sh "cd openJDK ; make all"
+        def app52 = docker.image("clefos/openjdk:8")
+        def app53 = docker.image("clefos/openjdk:11")
+        def app54 = docker.image("clefos/openjdk:12")
+        // sh "docker rmi clefos/openjdk:8"
+        // sh "docker rmi clefos/openjdk:11"
+        // sh "docker rmi clefos/openjdk:12"
+        // sh "cd hadoop-openshift ; wget https://archive.apache.org/dist/hadoop/core/hadoop-3.1.0/hadoop-3.1.0.tar.gz"
+        // sh "cd openshift-spark/spark/zeppelin ; wget https://repo1.maven.org/maven2/org/apache/lucene/lucene-core/5.3.2/lucene-core-5.3.2.jar"
+        // sh "cd openshift-spark ; make all"
+        def app55 = docker.image("docker.io/clefos/spark")
+        def app56 = docker.image("docker.io/clefos/zeppelin")
+        // sh "docker rmi docker.io/clefos/spark"
+        // sh "docker rmi docker.io/clefos/zeppelin"
+        // sh "cd owncloud ; make all"
+        def app57 = docker.image("clefos/owncloud")
+        // sh "docker rmi clefos/owncloud"
+        // sh "cd postgresql ; make all"
+        def app58 = docker.image("clefos/postgresql")
+        // sh "docker rmi clefos/postgresql"
+        // sh "cd puppet ; make all"
+        def app59 = docker.image("clefos/puppet")
+        // sh "docker rmi clefos/puppet"
+        // sh "cd qpid ; make clefos/qpid"
+        def app60 = docker.image("clefos/qpid")
+        // sh "docker rmi clefos/qpid"
+        // sh "cd R-base ; make all"
+        def app61 = docker.image("clefos/r-base")
+        // sh "docker rmi clefos/r-base"
+        // sh "cd rabbitmq ; make all"
+        def app62 = docker.image("clefos/rabbitmq")
+        // sh "docker rmi clefos/rabbitmq"
+        // sh "cd react ; make all"
+        def app63 = docker.image("react-api")
+        def app64 = docker.image("react-client")
+        // sh "docker rmi react-client"
+        // sh "docker rmi react-api"
+        // sh "cd redis ; make all"
+        def app65 = docker.image("clefos/redis")
+        // sh "docker rmi clefos/redis"
+        // sh "cd registry ; make all"
+        def app66 = docker.image("clefos/registry")
+        // sh "docker rmi clefos/registry"
+        // sh "cd saltmaster ; make all"
+        def app67 = docker.image("clefos/saltmaster")
+        // sh "docker rmi clefos/saltmaster"
+        // sh "cd solr ; make all"
+        def app68 = docker.image("clefos/solr")
+        // sh "docker rmi clefos/solr"
+        // sh "cd spark ; make all"
+        def app69 = docker.image("clefos/spark-sa")
+        // sh "docker rmi clefos/spark-sa"
+        // sh "cd spark-ui-proxy ; make all"
+        def app70 = docker.image("clefos/spark-ui-proxy")
+        // sh "docker rmi clefos/spark-ui-proxy"
+        // sh "cd ssh ; make all"
+        def app71 = docker.image("clefos/ssh")
+        // sh "docker rmi clefos/ssh"
+        // sh "cd swarm ; make all"
+        def app72 = docker.image("clefos/swarm")
+        // sh "docker rmi clefos/swarm"
+        // sh "cd systemd ; make all"
+        def app73 = docker.image("clefos/systemd")
+        // sh "docker rmi clefos/systemd"
+        // sh "cd tomcat ; make all"
+        def app74 = docker.image("clefos/tomcat")
+        // sh "docker rmi clefos/tomcat"
+        // sh "cd tools ; make all"
+        def app75 = docker.image("clefos/tools")
+        // sh "docker rmi clefos/tools"
+        // sh "cd ulboracms ; make all"
+        def app76 = docker.image("clefos/ulboracms")
+        // sh "docker rmi clefos/ulboracms"
+        // sh "cd watchtower ; make all"
+        def app77 = docker.image("clefos/watchtower")
+        // sh "docker rmi clefos/watchtower"
+        // sh "cd websphere ; make all"
+        // sh "cd wordpress ; make all"
+        def app78 = docker.image("clefos/wordpress")
+        // sh "docker rmi clefos/wordpress"
+        // sh "cd wordpress-sa ; make all"
+        def app79 = docker.image("clefos/wordpress-sa")
+        // sh "docker rmi clefos/wordpress-sa"
+        // sh "cd websphere ; make"
+        def app80 = docker.image("clefos/websphere-liberty:kernel")
+        def app81 = docker.image("clefos/websphere-liberty:microProfile")
+        def app82 = docker.image("clefos/websphere-liberty:webProfile6")
+        def app83 = docker.image("clefos/websphere-liberty:webProfile7")
+        def app84 = docker.image("clefos/websphere-liberty:javaee7")
+        def app85 = docker.image("clefos/websphere-liberty:beta")
+    }
+
+    stage('Push'){
+        // docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
+        // app1.push()
+        // app2.push()
+        // app3.push()
+        // app5.push()
+        // app6.push()
+        // app7.push()
+        // app8.push()
+        // app9.push()
+        // app10.push()
+        // app11.push()
+        // app12.push()
+        // app13.push()
+        // app14.push()
+        // app15.push()
+        // app16.push()
+        // app17.push()
+        // app18.push()
+        // app19.push()
+        // app20.push()
+        // app21.push()
+        // app22.push()
+        // app23.push()
+        // app24.push()
+        // app25.push()
+        // app26.push()
+        // app27.push()
+        // app28.push()
+        // app29.push()
+        // app30.push()
+        // app31.push()
+        // app32.push()
+        // app33.push()
+        // app34.push()
+        // app35.push()
+        // app36.push()
+        // app37.push()
+        // app38.push()
+        // app39.push()
+        // app40.push()
+        // app41.push()
+        // app42.push()
+        // app43.push()
+        // app44.push()
+        // app45.push()
+        // app46.push()
+        // app47.push()
+        // app48.push()
+        // app49.push()
+        // app50.push()
+        // app51.push()
+        // app52.push()
+        // app53.push()
+        // app54.push()
+        // app55.push()
+        // app56.push()
+        // app57.push()
+        // app58.push()
+        // app59.push()
+        // app60.push()
+        // app61.push()
+        // app62.push()
+        // app63.push()
+        // app64.push()
+        // app65.push()
+        // app66.push()
+        // app67.push()
+        // app68.push()
+        // app69.push()
+        // app70.push()
+        // app71.push()
+        // app72.push()
+        // app73.push()
+        // app74.push()
+        // app75.push()
+        // app76.push()
+        // app77.push()
+        // app78.push()
+        // app79.push()
+        // app80.push()
+        // }
+    }
+
+    stage('Cleanup') {
+        sh "./removeall.sh"
+        sh "docker system prune -f"
+    }
+        
+    // }
+    
+}
