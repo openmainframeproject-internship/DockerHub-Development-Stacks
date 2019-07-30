@@ -3,10 +3,9 @@ node {
         checkout scm
     }
 
-    
     stage('Build image') {
         DOCKER_HOME = tool "docker"
-        sh "./clefos/buildall.sh"
+        // sh "./clefos/buildall.sh"
         def app1 = docker.image("clefos/ade")
         // sh "docker rmi clefos/ade"
         // sh "mv ansible/Dockerfile ."
