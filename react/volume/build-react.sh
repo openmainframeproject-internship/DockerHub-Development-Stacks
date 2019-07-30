@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 yum install git patch -y -q
 git clone https://github.com/Joao-Henrique/React_Express_App_Medium_Tutorial.git
 cd React_Express_App_Medium_Tutorial/api
