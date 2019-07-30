@@ -14,6 +14,6 @@ do
     if [ $(containsElement $x "${blacklist[@]}" ; echo $?) == 1 ]
     then
         echo $x
-        cd $x ; make clean ; cd $original_path
+        cd clefos/$x ; make clean ; cd $original_path
     fi
 done
