@@ -154,23 +154,18 @@ node {
         // sh "docker rmi docker.io/clefos/ibmjava:11-sdk"
         // sh "docker rmi docker.io/clefos/ibmjava:8-sfj"
         // sh "mv ibmjava/8/sdk/Dockerfile ."
-        def app25 = docker.image("clefos/ibmjava:8-sdk")
         // sh "mv Dockerfile ibmjava/8/sdk/"
         // sh "docker rmi clefos/ibmjava:8-sdk"
         // sh "mv ibmjava/8/sfj/Dockerfile ."
-        def app26 = docker.image("clefos/ibmjava:8-sfj")
         // sh "mv Dockerfile ibmjava/8/sfj/"
         // sh "docker rmi clefos/ibmjava:8-sfj"
         // sh "mv ibmjava/11/sdk/Dockerfile ."
-        def app27 = docker.image("clefos/ibmjava:11-sdk")
         // sh "mv Dockerfile ibmjava/11/sdk/"
         // sh "docker rmi clefos/ibmjava:11-sdk"
         // sh "mv ibmjava/8/maven/Dockerfile ."
-        def app28 = docker.image("clefos/maven:8")
         // sh "mv Dockerfile ibmjava/8/maven/"
         // sh "docker rmi clefos/maven:8"
         // sh "mv ibmjava/11/maven/Dockerfile ."
-        def app29 = docker.image("clefos/maven:11")
         // sh "mv Dockerfile ibmjava/11/maven/"
         // sh "docker rmi clefos/maven:11"
         // sh "cd jboss ; git clone https://github.com/jboss-dockerfiles/wildfly.git ; cd .."
@@ -334,19 +329,18 @@ node {
         // sh "docker rmi clefos/watchtower"
         // sh "cd websphere ; make all"
         // sh "cd wordpress ; make all"
-        def app79 = docker.image("clefos/wordpress")
+        def app78 = docker.image("clefos/wordpress")
         // sh "docker rmi clefos/wordpress"
         // sh "cd wordpress-sa ; make all"
-        def app80 = docker.image("clefos/wordpress-sa")
+        def app79 = docker.image("clefos/wordpress-sa")
         // sh "docker rmi clefos/wordpress-sa"
         // sh "cd websphere ; make"
-        def app81 = docker.image("clefos/websphere-liberty:kernel")
-        def app82 = docker.image("clefos/websphere-liberty:microProfile")
-        def app83 = docker.image("clefos/websphere-liberty:webProfile6")
-        def app84 = docker.image("clefos/websphere-liberty:webProfile7")
-        def app85 = docker.image("clefos/websphere-liberty:javaee7")
-        def app86 = docker.image("clefos/websphere-liberty:beta")
-
+        def app80 = docker.image("clefos/websphere-liberty:kernel")
+        def app81 = docker.image("clefos/websphere-liberty:microProfile")
+        def app82 = docker.image("clefos/websphere-liberty:webProfile6")
+        def app83 = docker.image("clefos/websphere-liberty:webProfile7")
+        def app84 = docker.image("clefos/websphere-liberty:javaee7")
+        def app85 = docker.image("clefos/websphere-liberty:beta")
     }
 
     stage('Push'){
