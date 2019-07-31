@@ -10,7 +10,7 @@ node {
 
     stage('Validation') {
             //Moving in to the directory to execute the commands
-            sh "echo ${env.GIT_COMMIT}"
+            sh 'echo $GIT_COMMIT'
             echo env.GIT_COMMIT
             echo env.GIT_PREVIOUS_SUCCESSFUL_COMMIT
             def gc = env.GIT_COMMIT
