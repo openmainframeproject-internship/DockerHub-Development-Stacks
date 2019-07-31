@@ -4,8 +4,10 @@ node {
 
     stage('Clone Repository') {
         checkout scm
+        echo env.GIT_COMMIT
         lastsuccess = getLastSuccessfulCommit()
         currentCommit = commitHashForBuild( currentBuild.rawBuild )
+
     }
 
     stage('Validation') {
