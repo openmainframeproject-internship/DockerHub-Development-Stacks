@@ -10,6 +10,7 @@ containsElement () {
   return 1
 }
 
+
 for x in $(ls -d */)
 do
     if [ $(containsElement $x "${blacklist[@]}" ; echo $?) == 1 ]
