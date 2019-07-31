@@ -3,6 +3,8 @@ node('suse') {
         checkout scm
     }
 
+
+
     stage('Build image') {
         DOCKER_HOME = tool "docker"
         dir("suse"){
