@@ -11,8 +11,8 @@ node {
     stage('Validation') {
             //Moving in to the directory to execute the commands
             sh "echo ${env.GIT_COMMIT}"
-            echo GIT_COMMIT %GIT_COMMIT%
-            echo GIT_PREVIOUS_SUCCESSFUL_COMMIT %GIT_PREVIOUS_SUCCESSFUL_COMMIT%
+            echo GIT_COMMIT
+            echo GIT_PREVIOUS_SUCCESSFUL_COMMIT
             def gc = GIT_COMMIT
             def glsc = GIT_PREVIOUS_SUCCESSFUL_COMMIT
             dir('clefos') {
