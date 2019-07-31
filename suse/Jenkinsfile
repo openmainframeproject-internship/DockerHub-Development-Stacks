@@ -11,8 +11,8 @@ node('suse') {
                     //Using the git command to check the difference between previous successful commit. ${GIT_PREVIOUS_SUCCESSFUL_COMMIT} is an environment variable comes with GIT Jenkins plugin
                     //There is a drawback though, if it is the first time you are running this job, this variable is not available and fails the build
                     //For the first time i had to use ${env.GIT_COMMIT} itself at both places to pass the build. A hack but worth it for future builds.
-                
-                    def strCount = sh(returnStdout: true, script: "git diff --name-only ${env.GIT_COMMIT} ${GIT_PREVIOUS_SUCCESSFUL_COMMIT} | grep suse | wc -l").trim()
+                    def lastsuccess = getLastSuccessfulCommit()
+                    def strCount = sh(returnStdout: true, script: "git diff --name-only ${env.GIT_COMMIT} $lastsuccess | grep suse | wc -l").trim()
                     if(strCount=="0") {
                         echo "Skipping build no files updated"
                         CONTINUE_BUILD = false
@@ -80,4 +80,23 @@ node('suse') {
         // sh "mv scripts wordpress/"
         // }
     }
+}
+
+
+def getLastSuccessfulCommit() {
+  def lastSuccessfulHash = null
+  def lastSuccessfulBuild = currentBuild.rawBuild.getPreviousSuccessfulBuild()
+  if ( lastSuccessfulBuild ) {
+    lastSuccessfulHash = commitHashForBuild( lastSuccessfulBuild )
+  }
+  return lastSuccessfulHash
+}
+
+/**
+ * Gets the commit hash from a Jenkins build object, if any
+ */
+@NonCPS
+def commitHashForBuild( build ) {
+  def scmAction = build?.actions.find { action -> action instanceof jenkins.scm.api.SCMRevisionAction }
+  return scmAction?.revision?.hash
 }
