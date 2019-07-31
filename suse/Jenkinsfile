@@ -1,9 +1,10 @@
 node('suse') {
-
+    def lastsuccess
+    def currentCommit
     stage('Clone repository') {
         checkout scm
-        def lastsuccess = getLastSuccessfulCommit()
-        def currentCommit = commitHashForBuild( currentBuild.rawBuild )
+        lastsuccess = getLastSuccessfulCommit()
+        currentCommit = commitHashForBuild( currentBuild.rawBuild )
     }
 
     stage('Validation') {
