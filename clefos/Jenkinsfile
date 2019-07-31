@@ -4,14 +4,15 @@ node {
 
     stage('Clone Repository') {
         checkout scm
+        lastsuccess = getLastSuccessfulCommit()
+        currentCommit = commitHashForBuild( currentBuild.rawBuild )
     }
 
     stage('Validation') {
             //Moving in to the directory to execute the commands
-        
+            sh "echo $lastsuccess"
+            sh "echo $currentCommit"
             dir('clefos') {
-                    lastsuccess = getLastSuccessfulCommit()
-                    currentCommit = commitHashForBuild( currentBuild.rawBuild )
                     //Using the git command to check the difference between previous successful commit. ${GIT_PREVIOUS_SUCCESSFUL_COMMIT} is an environment variable comes with GIT Jenkins plugin
                     //There is a drawback though, if it is the first time you are running this job, this variable is not available and fails the build
                     //For the first time i had to use ${env.GIT_COMMIT} itself at both places to pass the build. A hack but worth it for future builds.

@@ -3,7 +3,8 @@ node('suse') {
     def currentCommit
     stage('Clone repository') {
         checkout scm
-        
+        lastsuccess = getLastSuccessfulCommit()
+        currentCommit = commitHashForBuild( currentBuild.rawBuild )
     }
 
     stage('Validation') {
@@ -13,8 +14,8 @@ node('suse') {
                     //Using the git command to check the difference between previous successful commit. ${GIT_PREVIOUS_SUCCESSFUL_COMMIT} is an environment variable comes with GIT Jenkins plugin
                     //There is a drawback though, if it is the first time you are running this job, this variable is not available and fails the build
                     //For the first time i had to use ${env.GIT_COMMIT} itself at both places to pass the build. A hack but worth it for future builds.
-                    lastsuccess = getLastSuccessfulCommit()
-                    currentCommit = commitHashForBuild( currentBuild.rawBuild )
+                    sh "echo $lastsuccess"
+                    sh "echo $currentCommit"
                     def strCount = sh(script: "git diff --name-only $currentCommit $lastsuccess | grep suse | wc -l", returnStdout: true).trim()
                     if(strCount=="0") {
                         echo "Skipping build no files updated"
