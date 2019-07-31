@@ -1,6 +1,7 @@
 #!/bin/sh
 cd clefos
 original_path=$(pwd)
+
 declare -a blacklist=(base/ origin/ AMHub_Files/)
 
 containsElement () {
