@@ -6,7 +6,7 @@ base:	sles-15-docker.tar.xz Dockerfile
 	docker build --rm --tag vedarth/sles --label VERSION=$(VERSION) .
 	
 sles-15-docker.tar.xz:	config.sh
-	./config.sh
+	sudo ./config.sh
 
 push:
 	docker push sles/sles:latest
