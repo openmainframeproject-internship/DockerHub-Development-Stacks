@@ -1,4 +1,5 @@
 node('suse') {
+    
     stage('Clone repository') {
         checkout scm
     }
