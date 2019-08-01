@@ -1,7 +1,7 @@
 #
 # Derived from the RedCoolBeans project
 #
-FROM clefos/clefos:clefos7
+FROM clefos:latest
 
 MAINTAINER 	"The ClefOS Project" <neale@sinenomine.net>
 ENV 		BACULA_VERSION "5.2.13"

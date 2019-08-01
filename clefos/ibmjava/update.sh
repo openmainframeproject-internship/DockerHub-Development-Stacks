@@ -89,7 +89,7 @@ print_maint() {
 # Print the supported Ubuntu OS
 print_clefos_os() {
 	cat >> $1 <<-EOI
-	FROM docker.io/clefos/clefos:clefos7
+	FROM docker.io/clefos:latest
 
 	EOI
 }

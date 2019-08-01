@@ -2,7 +2,7 @@
 # Derived almist in its entirety from https://raw.githubusercontent.com/macadmins/docker-puppetmaster
 # - Nick McSpadden 
 #
-FROM 		clefos/clefos:clefos7
+FROM 		clefos:latest
 
 MAINTAINER 	"The ClefOS Projet" <neale@sinenomine.net>
 LABEL 		Vendor="ClefOS" License="GPLv2"

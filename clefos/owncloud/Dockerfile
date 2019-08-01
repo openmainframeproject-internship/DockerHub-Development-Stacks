@@ -4,7 +4,7 @@
 # Originally written for Fedora-Dockerfiles by
 #   Dusty Mabe <dustymabe@gmail.com>
 
-FROM 	clefos/clefos:clefos7
+FROM 	clefos:latest
 MAINTAINER The ClefOS Project <neale@sinenomine.net>
 
 # Perform updates

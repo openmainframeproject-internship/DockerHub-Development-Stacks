@@ -1,4 +1,4 @@
-FROM 	clefos/clefos:clefos7
+FROM 	clefos:latest
 
 COPY 	./spark-ui-proxy.py /
 

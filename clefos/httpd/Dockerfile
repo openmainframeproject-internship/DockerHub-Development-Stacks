@@ -1,4 +1,4 @@
-FROM clefos/clefos:clefos7
+FROM clefos:latest
 MAINTAINER 	ClefOS Project <neale@sinenomine.net>
 LABEL 		Vendor="Sine Nomine Associates" License=GPLv2
 

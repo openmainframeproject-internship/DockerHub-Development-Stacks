@@ -19,7 +19,7 @@
 # limitations under the License.
 #
 
-FROM docker.io/clefos/clefos:clefos7
+FROM docker.io/clefos:latest
 
 MAINTAINER The ClefOS Project <neale@sinenomine.net>
 

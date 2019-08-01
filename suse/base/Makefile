@@ -4,14 +4,15 @@ all:	base
 
 base:	sles-15-docker.tar.xz Dockerfile
 	docker build --rm --tag vedarth/sles --label VERSION=$(VERSION) .
+	docker tag sles/sles:latest sles/sles:sles15
+	docker tag sles/sles:latest sles/sles:$(VERSION)
+	docker tag sles/sles:latest sles:sles15
 	
 sles-15-docker.tar.xz:	config.sh
 	./config.sh
 
 push:
-	docker tag sles/sles:latest sles/sles:sles15
-	docker tag sles/sles:latest sles/sles:$(VERSION)
-	docker tag sles/sles:latest sles:sles15
+
 	docker push sles/sles:latest
 	docker push sles/sles:sles15
 	docker push sles/sles:$(VERSION)
