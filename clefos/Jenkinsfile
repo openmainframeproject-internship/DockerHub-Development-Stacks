@@ -8,7 +8,7 @@ node {
     try {
     stage('Build image') {
         DOCKER_HOME = tool "docker"
-        // sh "./clefos/buildall.sh"
+        sh "./clefos/buildall.sh"
         def app1 = docker.image("clefos/ade")
         // sh "docker rmi clefos/ade"
         // sh "mv ansible/Dockerfile ."
@@ -426,7 +426,6 @@ node {
         // app79.push()
         // app80.push()
         // }
-        sh 'exit 1'
     }
     } catch(e) {
         build_ok = false

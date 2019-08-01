@@ -60,4 +60,17 @@ node('suse') {
         sh "mv scripts wordpress/"
         }
     }
+    stage('Clean') {
+        dir("suse"){
+            sh "cd django; make clean"
+            sh "cd golang; make clean"
+            sh "cd jupyter; make clean"
+            sh "cd mariadb; make clean"
+            sh "cd nginx; make clean"
+            sh "cd nodejs; make clean"
+            sh "cd postgresql; make clean"
+            sh "cd redis; make clean"
+            sh "cd wordpress; make clean"
+        }
+    }
 }
