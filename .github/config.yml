@@ -1,0 +1,6 @@
+owners:
+  - nealef
+commandNotFound: This command is not found, to see list of commands you can use, please type **/ompBot list**. Thanks.
+buildPassMessage: 'Build Passed :tada:. Comment **/ompBot merge** to merge the PR if you have correct access rights. If not then you can ask one of maintainers for the review. To see list of all reviewers use **/ompBot reviewList**'
+mergeMessage: 'Thanks you for your contribution :v:. Happy contributing :fire:' 
+errorMessage: Build failed. Please check the errors and fix it. Thanks
