@@ -109,14 +109,3 @@ Files to build Docker containers for ClefOS 7.x
 * __wordpress__ - A free and open-source content management system (CMS) based on PHP and MySQL. Uses an external database
 
 * __wordpress-sa__ - A self-contained Wordpress container
-
-## Special Requirements
-
-There are additional files required that you will need to supply in the following directories:
-
-* `java` - IBM Java SDK self-installer - see the README in that directory
-
-  * Note, `dummy-java-1.8-0.el7.noarch.rpm` is used to register the presence of the Java SDK as the installation of the IBM SDK is not via an RPM. Consequently, packages (such as tomcat) which check for the presence of the JDK when installed would fail. This RPM will register itself as providing: java-1.8.0 and java-devel-1.8.0.
-
-* `spark` - IBM Spark SDK self-installer - see the README in that directory
-
