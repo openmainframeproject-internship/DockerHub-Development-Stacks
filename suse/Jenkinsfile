@@ -58,6 +58,16 @@ node('suse') {
         def app10 = docker.build("vedarth/wordpress")
         sh "mv Dockerfile wordpress/"
         sh "mv scripts wordpress/"
+        sh "mv cobol/VERSION ."
+        sh "mv cobol/Dockerfile ."
+        def app11 = docker.build("knrt10/etcd")
+        sh "mv VERSION cobol/"
+        sh "mv Dockerfile cobol/"
+        sh "mv etcd/install.sh ."
+        sh "mv etcd/Dockerfile ."
+        def app12 = docker.build("knrt10/etcd")
+        sh "mv install.sh etcd/"
+        sh "mv Dockerfile etcd/"
         }
     }
     stage('Clean') {
@@ -72,6 +82,8 @@ node('suse') {
             sh "docker rmi vedarth/postgresql"
             sh "docker rmi vedarth/redis"
             sh "docker rmi vedarth/wordpress"
+            sh "docker rmi knrt10/cobol"
+            sh "docker rmi knrt10/etcd"
             sh "docker system prune -f"
         }
     }
